@@ -10,13 +10,13 @@
 	When k (effective number of rotations) = 3, 
 	array becomes {4, 5, 6, 7, 8, 1, 2, 3}
 	
-	Element     became	this Element
-	0th (1)		 -->  		5th			= (8 - 3 + 0) % 8
-	1st (2)		 --> 		6th			= (8 - 3 + 1) % 8
-	3rd (4)		 -->		0th			= (8 - 3 + 3) % 8
-	5th (6)		 --> 		2nd 		= (8 - 3 + 5) % 8
+	Element       became	      this Element after rotations
+	0th (1)		-->  		5th	= (8 - 3 + 0) % 8
+	1st (2)		--> 		6th	= (8 - 3 + 1) % 8
+	3rd (4)		-->		0th	= (8 - 3 + 3) % 8
+	5th (6)		--> 		2nd 	= (8 - 3 + 5) % 8
 	
-	ith		 -->       (n - k + i) % n
+	ith		-->       	(n - k + i) % n
 	
 	For b) part, We will use logic of part a) in a loop.
 */
