@@ -2,10 +2,10 @@
 
 /*
 	Bucket sort is mainly useful when input is uniformly distributed 
-   over a range. For example, consider the following problem.
+	over a range. For example, consider the following problem.
 	
-   Sort a large set of floating point numbers which are in range 
-   from 0.0 to 1.0 and are uniformly distributed across the range. 
+   	Sort a large set of floating point numbers which are in range 
+   	from 0.0 to 1.0 and are uniformly distributed across the range. 
 	How do we sort the numbers efficiently?
 
 	bucketSort(arr[], n)
@@ -25,21 +25,21 @@ void bucketSort(float arr[], int n) {
 	vector<float> b[n];
 
 	// 2) Put array elements in different buckets 
-    for (int i=0; i<n; i++) {
+	for (int i=0; i<n; i++) {
 		// Index in bucket 
-    	int bi = n*arr[i];
-    	b[bi].push_back(arr[i]); 
-    } 
+		int bi = n*arr[i];
+		b[bi].push_back(arr[i]); 
+	} 
   
 	// 3) Sort individual buckets 
-    for (int i=0; i<n; i++) 
-       sort(b[i].begin(), b[i].end()); 
+	for (int i=0; i<n; i++) 
+		sort(b[i].begin(), b[i].end()); 
 
 	// 4) Concatenate all buckets into arr[]
-    int index = 0; 
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < b[i].size(); j++) 
-          arr[index++] = b[i][j];
+	int index = 0; 
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < b[i].size(); j++) 
+			arr[index++] = b[i][j];
 }
 
 /* -------------------- MAIN DRIVER CODE ------------------- */
@@ -51,7 +51,7 @@ int main()
   
     cout << "Sorted array is: \n"; 
     for (int i=0; i<n; i++) 
-       cout << arr[i] << " "; 
+	    cout << arr[i] << " "; 
     cout << endl;
     return 0; 
 }
