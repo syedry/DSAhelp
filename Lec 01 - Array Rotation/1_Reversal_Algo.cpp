@@ -4,7 +4,7 @@ Then the algorithm for left rotation is :
 
 	Reverse A to get A'B, where A' is reverse of A.			---- Step 1
 	Reverse B to get A'B', where B' is reverse of B.		---- Step 2
-	Reverse all to get (A'B')' = BA.						---- Step 3
+	Reverse all to get (A'B')' = BA.				---- Step 3
 
 Let the array be arr[] = {1, 2, 3, 4, 5, 6, 7}, d = 2 and n = 7. 
 Then A = {1, 2} and B = {3, 4, 5, 6, 7}
@@ -17,8 +17,8 @@ Similarly the algorithm of right rotation is :
 
 	Reverse all, we get (AB)' = B'A' = {7, 6, 5, 4, 3, 2, 1} 	---- Step 3
 		Now B' = {7, 6} and A' = {5, 4, 3, 2, 1}
-	Reverse B, we get BA' = {6, 7, 5, 4, 3, 2, 1} 				---- Step 1
-	Reverse A, we get BA = {6, 7, 1, 2, 3, 4, 5}				---- Step 2
+	Reverse B, we get BA' = {6, 7, 5, 4, 3, 2, 1} 			---- Step 1
+	Reverse A, we get BA = {6, 7, 1, 2, 3, 4, 5}			---- Step 2
 	
 So just the order of steps is different in left and right rotations, 
 but the steps remain the same - 
