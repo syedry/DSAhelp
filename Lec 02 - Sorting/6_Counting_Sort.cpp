@@ -29,7 +29,7 @@ Count: 0	2	4	4	5	6	6	7	7	7
    array, we get out sorted array.
 
 Index:  1	2	3	4	5	6	7	
-Sorted: 1	1	2	2	4   5   7
+Sorted: 1	1	2	2	4   	5   	7
 
 Time complexity is O(n) and space complexity is O(n).
 */
