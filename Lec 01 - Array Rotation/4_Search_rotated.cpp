@@ -1,6 +1,6 @@
 /*  An element in a sorted array can be found in O(log n) time via binary search.
-	So for instance, 1 2 3 4 5 might become 3 4 5 1 2 after rotation.  
-	Devise a way to find an element in the rotated array in O(log n) time.
+    So for instance, 1 2 3 4 5 might become 3 4 5 1 2 after rotation.  
+    Devise a way to find an element in the rotated array in O(log n) time.
 
 	SOLUTION:
 	The interesting property of a sorted + rotated array is that when you divide
@@ -27,10 +27,9 @@
 #include <iostream>
 using namespace std;
 
-
 int searchRotated (int arr[],int low, int high, int key) {
 	int mid = low + (high-low)/2;
-
+	
 	// Key is not present
 	if (low > high)
 		return -1;
