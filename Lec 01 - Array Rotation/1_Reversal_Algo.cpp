@@ -66,8 +66,8 @@ void rightRotate(int arr[], int n, int d) {
 int main() 
 { 
 	int size, rotate;
-
-    cout << "Size = ";
+	
+	cout << "Size = ";
 	cin >> size;
 
 	cout << "Rotate = ";
@@ -82,7 +82,7 @@ int main()
 
    	printArray(arr1, size); 
    	leftRotate(arr1, size, rotate); 
-    printArray(arr1, size); 
+    	printArray(arr1, size); 
  	
  	printArray(arr2, size); 
  	rightRotate(arr2, size, rotate);
