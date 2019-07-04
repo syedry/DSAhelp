@@ -18,7 +18,7 @@ Complexity:
     
     What is the value of d? If k is the maximum possible value, 
     then d would be O(logb(k)). So overall time complexity is O((n+b) * logb(k)). 
-    Which looks more than the time complexity of comparison based sorting algorithms 
+    This looks more than the time complexity of comparison based sorting algorithms 
     for a large k. Let us first limit k. Let k <= nc where c is a constant. 
     
     In that case, the complexity becomes O(nLogb(n)). 
