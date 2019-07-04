@@ -34,7 +34,7 @@ int main()
 { 
 	int size;
 
-    cout << "Size = ";
+    	cout << "Size = ";
 	cin >> size;
 
 	int arr1[size], arr2[size];
