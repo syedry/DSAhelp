@@ -14,10 +14,10 @@
 	L2 = 2*a[0] + 3*a[1] + 4*a[2] + 5*a[3] + .... +   0 * a[n-2] + 1*a[n-1]
 
 	L1 - L0 = 1*a[0] + 1*a[1] + 1*a[2] + .... + 1*a[n-2] - (n-1)*a[n-1]
-			= Sum of elements of array - n*a[n-1]
+		= Sum of elements of array - n*a[n-1]
 		
 	L2 - L1 = 1*a[0] + 1*a[1] + 1*a[2] + .... + 1*a[n-3] - (n-1)*a[n-2] + 1*a[n-1]
-			= Sum of elements of array - n*a[n-2]
+		= Sum of elements of array - n*a[n-2]
 
 	Similarly, 
 	L3 - L2 = Sum of elements of array - n*a[n-3]
