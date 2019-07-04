@@ -28,15 +28,15 @@ element with arr[i]. Otherwise we ignore current element.
 
 ILLUSTRATION:
 						10, 80, 90, 40, 50, 70
-								/	\		(partition about 70)
-							   /  	 \    
-					10, 40, 50	       90 80
-	(partition about 50)	/\	       	  /\  (partition about 80)
-						   /  \    		 /  \
-						10, 40   {}		{}   90
+							/\	(partition about 70)
+						      /    \    
+					      10, 40, 50    90 80
+			   (partition about 50)	  /\	     /\  (partition about 80)
+						 /  \       /  \
+					    10, 40   {}	   {}   90
 						/\ 
-(partition about 40)   /  \
-					 10   {}
+			(partition about 40)   /  \
+					     10   {}
 
 */		
 
