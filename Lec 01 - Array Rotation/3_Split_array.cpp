@@ -6,7 +6,7 @@
             k = 2
 	Output : arr[] = {5, 6, 52, 36, 12, 10}
 	Explanation : Split from index 2 and first part {12, 10} 
-				  add to the end .
+		      add to the end .
 
 	Input : arr[] = {3, 1, 2}
            k = 1
