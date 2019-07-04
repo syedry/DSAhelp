@@ -14,10 +14,10 @@
 	R2 = 0*a[2] + 1*a[3] + .... + (n-4)*a[n-2] + (n-3)*a[n-1] + (n-2)*a[0] + (n-1)*a[1]
 	
 	R0 - R1 = 1*a[1] + 1*a[2] + 1*a[3] + ..... + 1*a[n-2] + 1*a[n-1] - (n-1)*a[0]
-			= Sum of elements of array - n*a[0]
+		= Sum of elements of array - n*a[0]
 		  
 	R1 - R2 = 1*a[2] + 1*a[3] + ..... + 1*a[n-2] + 1*a[n-1] + 1*a[0] - (n-1)*a[1]
-			= Sum of elements of array - n*a[1]
+		= Sum of elements of array - n*a[1]
 
 	Hence,	Rj = Rj-1 + n*a[j-1] - Sum of elements of array;
 	
