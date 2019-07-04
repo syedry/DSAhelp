@@ -5,14 +5,14 @@
 	1) Split array into two parts
    	   - Create two empty vectors Neg[], Pos[]
    	   - Store all negative element in Neg[] by 
-         converting into positive (Neg[i] = -1 * Arr[i])
+             converting into positive (Neg[i] = -1 * Arr[i])
    	   - Store all +ve in pos[]  (pos[i] =  Arr[i])
 
 	2) Call function bucketSortPositive(Pos, pos.size())
 	   Call function bucketSortPositive(Neg, Neg.size())
     
-    3) Then concatenate Neg and Pos in reverse and forward 
-       order respectively.
+        3) Then concatenate Neg and Pos in reverse and forward 
+           order respectively.
 */
 
 #include <bits/stdc++.h> 
