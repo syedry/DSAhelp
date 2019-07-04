@@ -39,20 +39,20 @@ int findPivot (int arr[], int low, int high) {
 int pairsInRotated(int arr[], int n, int x) { 
     int pivot = findPivot (arr, 0, n-1);
     int r = pivot;	// r is index of maximum element. 
-    int l = (pivot + 1)%n;	// l is index of minimum element. 
+    int l = (pivot + 1)%n; // l is index of minimum element. 
     int count = 0;	// Variable to store count of number of pairs
 
     while (l != r) { 
         if (arr[l] + arr[r] == x) {
             count++;
-			cout << arr[l] << " " << arr[r] << endl;
+	    cout << arr[l] << " " << arr[r] << endl;
               
             // Condition to check that left and right pointers have met
-			// At this point, loop should terminate
-        	if(l == (r - 1 + n) % n)
-           		return count;
+	    // At this point, loop should terminate
+            if(l == (r - 1 + n) % n)
+		    return count;
             
-			// Move left and right pointers for next finding pair
+	    // Move left and right pointers for next finding pair
             l = (l + 1) % n; 
             r = (r - 1 + n) % n; 
         }
