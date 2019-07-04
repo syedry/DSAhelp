@@ -27,19 +27,19 @@ void merge (int arr[], int low, int mid, int high) {
 	  	right[j] = arr[mid + 1+ j];
       
 	//Now merge the temporary arrays back
-	i = 0;			//Initial index of first subarray
-	j = 0;			//Initial index of second subarray
+	i = 0;		//Initial index of first subarray
+	j = 0;		//Initial index of second subarray
 	int k = low;	//Initial index of merged subarray
-    while (i < n1 && j < n2) {
-    	if (left[i] <= right[j]) 
-      		arr[k] = left[i++];
-      	else
-      		arr[k] = right[j++];
-      	k++;
+	
+	while (i < n1 && j < n2) {
+		if (left[i] <= right[j]) 
+			arr[k++] = left[i++];
+		else
+			arr[k++] = right[j++];
 	}
     
 	//Copying remaining elements of left[] if any
-    while (i < n1)
+	while (i < n1)
 		arr[k++] = left[i++];  
 	while (j < n2) 
 		arr[k++] = right[j++];
@@ -53,8 +53,8 @@ void mergeSort1 (int arr[], int low, int high) {
 		mergeSort1 (arr, low, mid); 
 		mergeSort1 (arr, mid+1, high); 
   
-        merge(arr, low, mid, high); 
-    }
+        	merge(arr, low, mid, high); 
+	}
 }
 
 // Main Logic of Iterative MergeSort
@@ -70,7 +70,8 @@ void mergeSort2 (int arr[], int n) {
 }
 
 /* ------------------ MAIN DRIVER CODE ------------------ */
-int main() {
+int main() 
+{
 	int size;
 	
 	cout << "Size = ";
