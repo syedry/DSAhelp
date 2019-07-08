@@ -26,6 +26,7 @@ class Node {
         Node* next;
 };
 
+// Auxiliary Function
 void push(Node** head_ref, int new_data) {
     Node* new_node = new Node();
     new_node->data = new_data;
@@ -33,6 +34,7 @@ void push(Node** head_ref, int new_data) {
     *head_ref = new_node;
 }
 
+// Main Logic of Code
 int getNthIterative (Node* head, int index) {
     Node* current = head;
     int count = 1;
@@ -54,6 +56,7 @@ int getNthRecursive (Node* head, int index) {
     return getNthRecursive(head->next, index-1);
 }
 
+/* ------------------ MAIN DRIVER CODE -----------------------*/
 int main() 
 {
     struct Node* head = NULL; 
