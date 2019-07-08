@@ -23,6 +23,7 @@ struct Node{
     Node* next;
 };
 
+// Auxiliary Function
 void push(Node** head_ref, int new_key) {  
     Node* new_node = new Node; 
     new_node->data = new_key;  
@@ -30,6 +31,7 @@ void push(Node** head_ref, int new_key) {
     (*head_ref) = new_node;  
 }
 
+// Main Logic of Code
 int iterativeSearch (Node* head, int x) {
     Node* current = head; int count = 1;
     while (current != NULL)
@@ -58,6 +60,7 @@ int recursiveSearch (Node* head, int x) {
     return indexFromChildList;
 }
 
+/* --------------- MAIN DRIVER CODE -----------------*/
 int main() 
 { 
     struct Node* head = NULL; 
