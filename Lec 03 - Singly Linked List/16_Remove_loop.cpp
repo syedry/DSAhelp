@@ -92,6 +92,7 @@ void detectAndRemoveLoop (Node* head) {
     }
 }
 
+/* -------------- MAIN DRIVER CODE ---------------- */
 int main() 
 { 
     Node *head = newNode(50);

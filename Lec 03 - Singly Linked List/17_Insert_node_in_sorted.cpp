@@ -48,7 +48,8 @@ void sortedInsert (Node** head_ref, Node* new_node) {
     }
 }
  
- int main()  
+/* -------------- MAIN DRIVER CODE ---------------- */
+int main()  
 {
     Node* head = NULL;  
     Node *new_node = newNode(5);  

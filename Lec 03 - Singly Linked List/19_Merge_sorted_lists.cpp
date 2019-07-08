@@ -104,6 +104,7 @@ Node* mergeRecursive (Node* a, Node* b) {
     return result;
 }
 
+/* -------------- MAIN DRIVER CODE ---------------- */
 int main()  
 {
     Node* res1 = NULL;
