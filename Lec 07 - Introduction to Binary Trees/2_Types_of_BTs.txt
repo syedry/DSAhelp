@@ -27,9 +27,9 @@ where L = Number of leaf nodes, N = Number of internal nodes.
 A Binary Tree is a complete binary tree if all levels are completely filled except possibly the last
 level and the last level has all keys as left as possible.
 
-	            18
+	        18
               /    \  
-         	15      30  
+            15      30  
            /  \     /  \
          40    50  100  40
      	/  \   /
@@ -41,7 +41,7 @@ level and the last level has all keys as left as possible.
 A Binary Tree is a perfect binary tree if all internal nodes have two children and all leaves are at the 
 same level.
 
-	           18
+	       18
            /       \  
          15         30  
         /  \        /  \
@@ -56,20 +56,20 @@ A skewed tree is a tree where each node has only one child node or none.
 
 Examples:
 
-				5
+			    5
 			   /   
 			  4
 			   \
-				3
-				/
+			    3
+			    /
 			   2
 	This is a skewed tree.
 
-				5
-				/
-			   4
-				\
-				 3
+			      5
+			      /
+			     4
+			     \
+		              3
 			    /  \
 			   2    4
 	This is not a skewed tree.
