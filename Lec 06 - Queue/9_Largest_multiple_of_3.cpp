@@ -89,39 +89,38 @@ void findMaxMultipleOf3 (int arr[], int size) {
     }
     // 4.2 The sum produces remainder 1
     if ((sum % 3) == 1) { 
-		// either remove one item from queue1 
-		if (!queue1.empty()) 
-			queue1.pop(); 
+	    // either remove one item from queue1 
+	    if (!queue1.empty()) 
+		    queue1.pop(); 
 		// or remove two items from queue2 
-		else { 
-			if (!queue2.empty()) 
-				queue2.pop(); 
-			else
-				flag = false; 
+	    else { 
+		    if (!queue2.empty()) 
+			    queue2.pop(); 
+		    else
+			    flag = false; 
 
-			if (!queue2.empty()) 
-				queue2.pop(); 
-			else
-				flag = false; 
-		}
-	}
+		    if (!queue2.empty()) 
+			    queue2.pop(); 
+		    else
+			    flag = false; 
+	    }
+    }
     // 4.3 The sum produces remainder 2
-    // Step 4.3: The sum produces remainder 2 
-	else if ((sum % 3) == 2) { 
-		// either remove one item from queue2 
-		if (!queue2.empty()) 
-			queue2.pop(); 
+    else if ((sum % 3) == 2) { 
+	    // either remove one item from queue2 
+	    if (!queue2.empty()) 
+		    queue2.pop(); 
 		// or remove two items from queue1 
-		else { 
-			if (!queue1.empty()) 
-				queue1.pop(); 
-			else
-				flag = false; 
+	    else { 
+		    if (!queue1.empty()) 
+			    queue1.pop(); 
+		    else
+			    flag = false; 
 
-			if (!queue1.empty()) 
-				queue1.pop(); 
-			else
-				flag = false; 
+		    if (!queue1.empty()) 
+			    queue1.pop(); 
+		    else
+			    flag = false; 
 		}
 	}
     int aux[size], top = 0;
@@ -141,9 +140,9 @@ void findMaxMultipleOf3 (int arr[], int size) {
 /* -------------- MAIN DRIVER CODE ------------- */
 int main() 
 {
-	int arr[] = { 8, 81, 7, 61, 0 }; 
-	int size = sizeof(arr) / sizeof(arr[0]); 
+    int arr[] = { 8, 81, 7, 61, 0 }; 
+    int size = sizeof(arr) / sizeof(arr[0]); 
     findMaxMultipleOf3 (arr, size);
 
-	return 0; 
+    return 0; 
 } 
