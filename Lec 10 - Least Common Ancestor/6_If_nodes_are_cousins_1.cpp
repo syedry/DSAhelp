@@ -26,14 +26,14 @@ class Node {
 };
 
 // Recursive function to check if two Nodes are siblings 
-int isSibling(struct Node *root, struct Node *a, struct Node *b) {
+int isSibling(Node *root, Node *a, Node *b) {
     if (root==NULL)  return 0; 
     return ((root->left==a && root->right==b)|| (root->left==b && root->right==a)|| \
         isSibling(root->left, a, b)|| isSibling(root->right, a, b)); 
 } 
 
 // Recursive function to find level of Node 'ptr' in a binary tree 
-int level(struct Node *root, struct Node *ptr, int lev) {
+int level(Node *root, Node *ptr, int lev) {
     if (root == NULL) return 0; 
     if (root == ptr)  return lev; 
   
@@ -45,7 +45,7 @@ int level(struct Node *root, struct Node *ptr, int lev) {
 } 
 
 // Returns 1 if a and b are cousins, otherwise 0 
-int isCousin(struct Node *root, struct Node *a, struct Node *b) { 
+int isCousin( Node *root, Node *a, Node *b) { 
     //1. The two Nodes should be on the same level in the binary tree. 
     //2. The two Nodes should not be siblings (means that they should 
     // not have the same parent Node). 
@@ -57,7 +57,7 @@ int isCousin(struct Node *root, struct Node *a, struct Node *b) {
 /* --------------- MAIN DRIVER CODE ------------- */
 int main() 
 { 
-    struct Node *root = new Node(1); 
+    Node *root = new Node(1); 
     root->left = new Node(2); 
     root->right = new Node(3); 
     root->left->left = new Node(4); 
@@ -67,7 +67,7 @@ int main()
     root->right->right = new Node(7); 
     root->right->left->right = new Node(8); 
   
-    struct Node *Node1,*Node2; 
+    Node *Node1,*Node2; 
     Node1 = root->left->left; 
     Node2 = root->right->right; 
   
