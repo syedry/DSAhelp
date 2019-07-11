@@ -83,7 +83,7 @@ int main()
     v1 and v2. v1 is set as true when n1 is present in tree 
     and v2 is set as true if n2 is present in tree. 
 
-    Node *findLCAUtil(struct Node* root, int n1, int n2, bool &v1, bool &v2) { 
+    Node *findLCAUtil(Node* root, int n1, int n2, bool &v1, bool &v2) { 
         if (root == NULL) return NULL;
 
         if (root->key == n1) { 
