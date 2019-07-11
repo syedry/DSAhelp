@@ -1,5 +1,0 @@
-1. LCA
-2. Find ancestors of a given node
-3. Kth ancestor of a node
-4. Determine if two nodes are cousins
-5. Find distance between two nodes in BT
