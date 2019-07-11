@@ -95,7 +95,7 @@ int main()
     root->right->right = new Node(7); 
     root->right->left->right = new Node(8); 
   
-    struct Node *Node1, *Node2; 
+    Node *Node1, *Node2; 
     Node1 = root->left->left; 
     Node2 = root->right->right; 
   
