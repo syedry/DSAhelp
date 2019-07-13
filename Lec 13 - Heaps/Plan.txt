@@ -1,0 +1,10 @@
+Binary Heap
+Heapify
+Kth smallest/largest in an unsorted array
+Check if given array/BT represents Heap
+Heap application: Heap Sort (Add: Sort an almost sorted array) 
+Heap application: Priority Queues
+Find k numbers with most occurrences in the given array
+Merge K sorted 
+Median of Stream of Running Integers using STL
+Connect n ropes with minimum cost

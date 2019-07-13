@@ -1,0 +1,11 @@
+
+-----------------------------
+1. Find the node with minimum value in BST - P
+2. Kth smallest and Kth largest elements in BST - P
+3. Find median of BST - P
+4. Sum of k smallest elements in BST - P
+5. Find the closest element in Binary Search Tree - P
+6. Count/Find pairs from two BSTs whose sum is equal to K - P
+7. Add all greater values to every node in a given BST  - P
+8. Given n appointments, find conflicting appointments - P
+9. Count/Print BST keys in the given range (Add: Remove BST keys outside the given range) - P
