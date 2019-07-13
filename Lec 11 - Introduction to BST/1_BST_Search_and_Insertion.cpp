@@ -21,7 +21,7 @@
 	a key from root till we hit a leaf node. Once a leaf node 
 	is found, the new node is added as a child of the leaf node.
 
-	     100                               100
+	 100                               100
         /   \        Insert 40            /   \
       20     500    --------->          20     500 
      /  \                              /  \  
