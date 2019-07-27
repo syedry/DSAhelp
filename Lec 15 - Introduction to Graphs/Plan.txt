@@ -1,0 +1,25 @@
+1. Graph Representation
+2. BFS for Graph
+    - Finding paths
+    - Connectivity
+    - Bipartite graphs
+3. DFS for Graph
+    - Finding cycles
+    - Articulation vertices
+4. DFS on directed graphs
+    - Topological Sorting
+    - Strongly connected components
+5. Minimum Spanning Tree
+    - Prim's Algo
+    - Kruskal's Algo
+6. Shortest paths
+    - Dijkstra's Algo
+    - All pairs Shortest paths
+    - Transitive Closure
+7. Bipartite Matching
+8. Network Flows
+
+------------------------------------------------------------------
+
+Extra Day - August 5th, 2019
+
