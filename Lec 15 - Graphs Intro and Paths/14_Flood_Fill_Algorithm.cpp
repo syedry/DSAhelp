@@ -97,7 +97,6 @@ string solveMaze (int** maze, int n, int m) {
         ans += route.top();
         route.pop();
     }
-    ans.reserve();
     return ans;
 }
 
