@@ -28,14 +28,15 @@ int solveUtil (char graph[][MAX], int n, int m, int r, int c, bool** visited, ch
         int a, b;
         a = r + rr[i];
         b = c + cc[i];
-
+        
         if (a < 0 || b < 0 || a >= n || b >= m)
             continue;
         if (visited[a][b])
             continue;
+        
         if (graph[a][b] == arr[0]) {
             visited[a][b] = true;
-            int ans = solveUtil(graph, n, m, a, b, visited, arr+1, node+1);
+            int ans = solveUtil (graph, n, m, a, b, visited, arr+1, node+1);
             if (ans == 1)
                 return 1;
             visited[a][b] = false;
@@ -43,11 +44,12 @@ int solveUtil (char graph[][MAX], int n, int m, int r, int c, bool** visited, ch
     }
     if (node == 8)
         return 1;
-    else
+    else 
         return 0;
 }
 
-int solve (char graph[][MAX], int n, int m) {
+int solve(char graph[][MAX],int n, int m) {
+
     bool** visited = new bool*[n];
     for (int i = 0; i < n; i++) {
         visited[i] = new bool[m];
@@ -74,8 +76,8 @@ int main() {
 	char Graph[MAX][MAX];
 	cin >> N >> M;
 	for(i = 0; i < N; i++)
-		cin>>Graph[i];
+		cin >> Graph[i];
 	
-	cout << solve(Graph,N,M) << endl;
+	cout << solve (Graph,N,M) << endl;
     return 0;
 }
