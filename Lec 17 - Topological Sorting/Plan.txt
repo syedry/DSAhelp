@@ -1,11 +1,5 @@
 Graphs:
 
-Topic 2: Graph cycles
-- Check cycle in undirected graph
-- Check cycle in directed graph
-- Cycles of length n in undirected graph
-- Check if there is a cycle of odd length
-
 Topic 3: Topological Sorting
 - Topological Sort
 - All Topo sorts of DAG
@@ -61,4 +55,3 @@ Topic 7: Flow Problems
 - Min Cut 
 Problem:
 - Channel Assignment Problem
-
