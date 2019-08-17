@@ -1,14 +1,5 @@
 Graphs:
 
-Topic 3: Topological Sorting
-- Topological Sort
-- All Topo sorts of DAG
-- Kahn's Algorithm
-- Max edges that can be added in a DAG so that it remains a DAG
-- Longest Path in DAG
-Problem:
-- Given a sorted dictionary of an alien language, find order of characters
-
 Topic 4: Minimum Spanning Tree
 - Union Find Algorithm
 - Kruskal's MST Algorithm (Adj matrix + Adj list + STL)
@@ -24,6 +15,7 @@ Topic 5: Shortest Path Algorithms
 - Dial's Algorithm
 - Karp's Minimum Mean-Weight Cycle Algorithm
 - A* Algorithm
+- Longest Path in DAG
 Problem:
 - Minimum Cost Path with Left, Right, Bottom and Up moves allowed
 - Find Shortest distance from a guard in a Bank
