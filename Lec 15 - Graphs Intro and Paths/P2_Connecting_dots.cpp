@@ -8,9 +8,9 @@
 
     1. All the k dots are different and k is atleast 4.
     2. All dots belong to same color.
-    3. For all i, 1 <= i <= k-1, di and di+1 are adjacent. 
+    3. For all i, 1 <= i <= k-1, di and di+1 are adjacent.
        Cells x and y are adjacent if they share an edge.
-    
+
     Input:
     Line 1 : Two integers N and M
     Next N lines : a string consisting of M characters
@@ -61,14 +61,13 @@ int connectDots(char board[][MAX], int n, int m) {
 }
 
 /* ----------- MAIN DRIVER CODE ------------ */
-int main()
-{
-	int N,M,i;
-	char board[MAX][MAX];
-	cin >> N >> M;
-	for(i = 0; i < N; i++)
-		cin >> board[i];
-	
-	cout << connectDots(board,N,M) << endl;
+int main() {
+    int N,M,i;
+    char board[MAX][MAX];
+    cin >> N >> M;
+    for(i = 0; i < N; i++)
+        cin >> board[i];
+
+    cout << connectDots(board,N,M) << endl;
     return 0;
 }

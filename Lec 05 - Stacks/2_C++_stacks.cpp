@@ -4,8 +4,7 @@
 #include <stdlib.h>
 using namespace std;
 
-class Stack
-{
+class Stack {
     private:
         int top;
     public:
@@ -72,21 +71,21 @@ int main() {
                     stack.push(val);
                 }
                 break;
-            
+
             case 2:
                 if (stack.isEmpty())
                     cout << "Underflow\n";
                 else
                     cout << stack.pop() << " popped out of stack.\n";
                 break;
-            
+
             case 3:
                 cout << stack.peek() << " is top element.\n";
                 break;
-            
+
             case 4:
                 exit (0);
-            
+
             default:
                 cout << "Invalid Option.\n";
         }

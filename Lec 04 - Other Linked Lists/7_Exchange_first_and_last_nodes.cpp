@@ -14,9 +14,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node  {  
-    public: 
-        int data;  
+class Node  {
+    public:
+        int data;
         Node *next;
         Node(int data) {
             this->data = data;
@@ -25,18 +25,18 @@ class Node  {
 };
 
 // Auxiliary Function
-void printList(Node *start)  {  
-    Node *temp;  
-      
-    if(start != NULL)  {  
-        temp = start;  
-        do {  
-        cout<<temp->data<<" ";  
-        temp = temp->next;  
-        } while(temp != start);  
+void printList(Node *start)  {
+    Node *temp;
+
+    if(start != NULL)  {
+        temp = start;
+        do {
+        cout<<temp->data<<" ";
+        temp = temp->next;
+        } while(temp != start);
     }
     cout << endl;
-} 
+}
 
 void push (Node** head_ref, int data) {
     Node* ptr1 = new Node(data);
@@ -49,7 +49,7 @@ void push (Node** head_ref, int data) {
     }
     else
         ptr1->next = ptr1;
-    
+
     *head_ref = ptr1;
 }
 
@@ -59,7 +59,7 @@ Node* exchangeNodes (Node* head) {
     // Find previous of last node
     while (p->next->next != head)
         p = p->next;
-    
+
     // Now exchange the nodes
     p->next->next = head->next;
     head->next = p->next;
@@ -70,21 +70,20 @@ Node* exchangeNodes (Node* head) {
 }
 
 /* --------------- MAIN DRIVER FUNCTION ----------------- */
-int main() 
-{ 
-    int i; 
+int main() {
+    int i;
     struct Node *head = NULL;
-      
-    for (i = 6; i > 0; i--) 
-        push(&head, i); 
-    
-    cout << "List Before: "; 
-    printList(head);  
-    
-    head = exchangeNodes(head); 
 
-    cout << "List After: "; 
-    printList(head); 
-  
-    return 0; 
-} 
+    for (i = 6; i > 0; i--)
+        push(&head, i);
+
+    cout << "List Before: ";
+    printList(head);
+
+    head = exchangeNodes(head);
+
+    cout << "List After: ";
+    printList(head);
+
+    return 0;
+}

@@ -7,27 +7,27 @@
               2   3
             /  \ /  \
            7   6 5   4
-    
+
     Output: 1 2 3 4 5 6 7
     NOTE: The above spiral traversal is Counter-Clockwise Traversal.
 
     SOLUTION:
 
     Recursive Approach:
-    We will use normal Level Order Traversal. An additional Boolean 
-    variable ltr is used to change printing order of levels. 
-    If ltr is 1 then printGivenLevel() prints nodes from left to right 
-    else from right to left. Value of ltr is flipped in each iteration 
+    We will use normal Level Order Traversal. An additional Boolean
+    variable ltr is used to change printing order of levels.
+    If ltr is 1 then printGivenLevel() prints nodes from left to right
+    else from right to left. Value of ltr is flipped in each iteration
     to change the order.
 
-    Worst case time complexity of the above method is O(n^2). 
+    Worst case time complexity of the above method is O(n^2).
     Worst case occurs in case of skewed trees.
 
     Iterative Approach:
-    We can print spiral order traversal in O(n) time and O(n) extra space. 
-    The idea is to use two stacks. We can use one stack for printing from 
-    left to right and other stack for printing from right to left. 
-    In every iteration, we have nodes of one level in one of the stacks. 
+    We can print spiral order traversal in O(n) time and O(n) extra space.
+    The idea is to use two stacks. We can use one stack for printing from
+    left to right and other stack for printing from right to left.
+    In every iteration, we have nodes of one level in one of the stacks.
     We print the nodes, and push nodes of next level in other stack.
 */
 
@@ -52,7 +52,7 @@ int height (Node* root) {
 
 void printGivenLevel (Node* root, int level, int ltr) {
     if (root == NULL)   return;
-    if (level == 1) 
+    if (level == 1)
         cout << root->data << " ";
     if (ltr) {
         printGivenLevel(root->left, level-1, ltr);
@@ -77,7 +77,7 @@ void printSpiralRec (Node* root) {
 // Main Logic of Iterative Approach
 void printSpiralItr (Node* root) {
     if (root == NULL)   return;
-    
+
     // Stack 1: For levels to be printed from R to L
     stack <Node*> s1;
     // Stack 2: For levels to be printed from L to R
@@ -109,21 +109,20 @@ void printSpiralItr (Node* root) {
 }
 
 /* -------------------- MAIN DRIVER CODE ------------------ */
-int main() 
-{ 
-    Node* root = new Node(1); 
-    root->left = new Node(2); 
-    root->right = new Node(3); 
-    root->left->left = new Node(7); 
-    root->left->right = new Node(6); 
-    root->right->left = new Node(5); 
-    root->right->right = new Node(4); 
-    cout << "Spiral Order traversal:\n";    
+int main() {
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(7);
+    root->left->right = new Node(6);
+    root->right->left = new Node(5);
+    root->right->right = new Node(4);
+    cout << "Spiral Order traversal:\n";
     printSpiralRec(root);
-    printSpiralItr(root); 
-  
-    return 0; 
-} 
+    printSpiralItr(root);
+
+    return 0;
+}
 
 /*  ADDITIONAL POINT:
 
@@ -134,10 +133,10 @@ int main()
               2   3
             /  \ /  \
            7   6 5   4
-    
+
     Zigzag Traversal: 1 3 2 7 6 5 4
 
-    The only thing we need to modify in above "Spiral Order Traversal" 
+    The only thing we need to modify in above "Spiral Order Traversal"
     code is:
     a) In Recursive Function:
         "ltr" flag. We will initially consider "ltr" flag to be true
@@ -145,7 +144,7 @@ int main()
     b) In Iterative Function:
         The use of stacks will change. Stack 1 will be used to print
         from L to R and Stack 2 will be used to print from R to L.
-        To do so, we interchange the order of pushing left and right 
+        To do so, we interchange the order of pushing left and right
         nodes onto stack. So the modified while loop becomes:
 
     while(!s1.empty() || !s2.empty()) {

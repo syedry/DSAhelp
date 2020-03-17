@@ -5,12 +5,12 @@
     Let the initial array be: arr[] = {1, 2, 3, 4, 5, 6, 7} and after
     rotations, array be: arr[] = {6, 7, 1, 2, 3, 4, 5}.
 
-    We can achieve this configuration by two ways:    
+    We can achieve this configuration by two ways:
     a) If the array was left_rotated, we need 5 rotations.
     b) If the array was right_rotated, we need 2 rotations.
 
     We can see one thing, if the index of pivot element is 'i',
-    (pivot is the maximum element of the array) then - 
+    (pivot is the maximum element of the array) then -
 
     No. of left rotations performed = N - i - 1
     No. of right rotations performed = i + 1
@@ -33,11 +33,11 @@ int findPivot (int arr[], int low, int high) {
         // If pivot is at 'mid'
         if (mid < high && arr[mid] > arr[mid+1])
             return mid;
-        
+
         // If pivot is at 'mid-1'
         if (mid > low && arr[mid] < arr[mid-1])
             return mid-1;
-        
+
         if (arr[low] >= arr[mid])
             high = mid-1;
         else
@@ -57,6 +57,6 @@ int main() {
     int right_rotations = pivot + 1;
     cout << "Left Rotations: " << left_rotations << endl;
     cout << "Right Rotations: " << right_rotations << endl;
-    
+
     return 0;
 }

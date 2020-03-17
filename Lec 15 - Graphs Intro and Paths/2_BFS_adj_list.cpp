@@ -22,10 +22,10 @@
                     enQueue (Q, vertex)
             i++
 
-    Explanation: 
+    Explanation:
 
     We are given a graph G in form of adjacency list and a starting
-    vertex s. The code starts with some initializations: 
+    vertex s. The code starts with some initializations:
 
     Like parent of vertex s is null as vertex s is starting vertex.
     Maintaining this parent list is optional in BFS, but this will give
@@ -33,7 +33,7 @@
     should set it's state as "This vertex has been visited or discovered",
     so that we shouldn't get stuck in a loop of two adjacent verticies.
 
-    Next is the level list. This list will store the info that - in how 
+    Next is the level list. This list will store the info that - in how
     many steps from the starting vertex, we will reach to the desired node.
     So we reach vertex 's' in zero steps because we have started from there.
 
@@ -45,8 +45,8 @@
     for the next nodes.
 
     The parent list actually forms a tree, where if we continue to find
-    the parent of nodes, we will end up at root 's' in shortest path. 
-    (Watch above mentioned video for more details). 
+    the parent of nodes, we will end up at root 's' in shortest path.
+    (Watch above mentioned video for more details).
 */
 
 #include<bits/stdc++.h>
@@ -57,7 +57,7 @@ class Graph {
     list<int>* adj; // can use vector<int>* as well
 
 public:
-    Graph(int V); 
+    Graph(int V);
     void addEdge(int u, int v);
     void BFS(int s);
 };

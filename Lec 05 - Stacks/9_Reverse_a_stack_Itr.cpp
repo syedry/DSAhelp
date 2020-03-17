@@ -4,12 +4,12 @@
     Case 1: If we are asked not to use loops and can only use basic Stack
         functions like - push(), pop(), isEmpty(), etc; We solve the problem
         by RECURSION. (Video Link for more details)
-    
+
     Case 2: If we are asked to reverse the stack in O(1) space, we can't use
-        Recursion. In this case - we will use loops. 
-        
+        Recursion. In this case - we will use loops.
+
     We can reverse a string in O(n) time if we internally represent the stack
-    as a linked list. Reverse a stack would require a reversing a linked list 
+    as a linked list. Reverse a stack would require a reversing a linked list
     which can be done with O(n) time and O(1) extra space.
 */
 
@@ -61,36 +61,35 @@ void Stack :: display() {
 }
 
 void Stack:: reverse() {
-    Node *prev, *cur, *succ; 
-    cur = prev = top; 
-    cur = cur->next; 
-    prev->next = NULL; 
-    while (cur != NULL) { 
+    Node *prev, *cur, *succ;
+    cur = prev = top;
+    cur = cur->next;
+    prev->next = NULL;
+    while (cur != NULL) {
 
-        succ = cur->next; 
-        cur->next = prev; 
-        prev = cur; 
-        cur = succ; 
-    } 
-    top = prev; 
+        succ = cur->next;
+        cur->next = prev;
+        prev = cur;
+        cur = succ;
+    }
+    top = prev;
 }
 
 /* --------------- MAIN DRIVER CODE --------------- */
-int main() 
-{ 
-    Stack *s = new Stack(); 
-    s->push(1); 
-    s->push(2); 
-    s->push(3); 
-    s->push(4); 
+int main() {
+    Stack *s = new Stack();
+    s->push(1);
+    s->push(2);
+    s->push(3);
+    s->push(4);
 
-    cout << "Original Stack:\n"; 
-    s->display(); 
-      
-    s->reverse(); 
-  
-    cout << "Reversed Stack:\n"; 
+    cout << "Original Stack:\n";
     s->display();
 
-    return 0; 
-} 
+    s->reverse();
+
+    cout << "Reversed Stack:\n";
+    s->display();
+
+    return 0;
+}

@@ -14,13 +14,13 @@ struct Node {
     }
 };
 
-void inOrder(struct Node* node) { 
-    if (node == NULL) 
-        return; 
-    inOrder(node->left); 
-    cout << node->data << " "; 
-    inOrder(node->right); 
-} 
+void inOrder(struct Node* node) {
+    if (node == NULL)
+        return;
+    inOrder(node->left);
+    cout << node->data << " ";
+    inOrder(node->right);
+}
 
 /* -------------------- MIRROR A BT ----------------------- */
 void mirrorRec (Node* root) {
@@ -56,21 +56,20 @@ void mirrorItr (Node* root) {
 }
 
 /* ---------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
-    struct Node *root = new Node(1); 
-    root->left        = new Node(2); 
-    root->right       = new Node(3); 
-    root->left->left  = new Node(4); 
-    root->left->right = new Node(5); 
-  
-    cout << "Inorder traversal of the constructed tree is: \n"; 
+int main() {
+    struct Node *root = new Node(1);
+    root->left        = new Node(2);
+    root->right       = new Node(3);
+    root->left->left  = new Node(4);
+    root->left->right = new Node(5);
+
+    cout << "Inorder traversal of the constructed tree is: \n";
     inOrder(root);
     cout << endl;
 
-    mirrorRec(root); 
+    mirrorRec(root);
 
-    cout << "Inorder traversal of the mirror tree is: \n"; 
+    cout << "Inorder traversal of the mirror tree is: \n";
     inOrder(root);
     cout << endl;
 
@@ -79,6 +78,6 @@ int main()
     cout << "Inorder traversal of the original tree is: \n";
     inOrder(root);
     cout << endl;
-  
-    return 0; 
+
+    return 0;
 }

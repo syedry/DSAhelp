@@ -1,13 +1,13 @@
-/*  PROBLEM: 
-    There are two singly linked lists in a system. By some programming error, 
-    the end node of one of the linked list got linked to the second list, 
+/*  PROBLEM:
+    There are two singly linked lists in a system. By some programming error,
+    the end node of one of the linked list got linked to the second list,
     forming an inverted Y shaped list. Write a program to get the point
     where two linked list merge.
 
     Approach 1 - Using Two Loops
-    Use 2 nested for loops. The outer loop will be for each node of the 1st list 
-    and inner loop will be for 2nd list. In the inner loop, check if any of nodes 
-    of the 2nd list is same as the current node of the first linked list. 
+    Use 2 nested for loops. The outer loop will be for each node of the 1st list
+    and inner loop will be for 2nd list. In the inner loop, check if any of nodes
+    of the 2nd list is same as the current node of the first linked list.
     Time complexity: O(M * N) where M and N are the numbers of nodes in two lists.
     Space complexity: O(1)
 
@@ -16,7 +16,7 @@
     2. Get the count of nodes in the second list. Let it be c2.
     3. Get difference d = abs(c1-c2)
     4. Traverse d nodes in the bigger list.
-    5. Then we can traverse both the lists in parallel till we come across a common node. 
+    5. Then we can traverse both the lists in parallel till we come across a common node.
        (Note that getting a common node is done by comparing the address of the nodes.)
     Time complexity: O(M+N) and Space Complexity: O(1)
 
@@ -43,10 +43,10 @@ void push (Node** head_ref, int new_data) {
     *head_ref = new_node;
 }
 
-void printList(Node* node) { 
-    while (node != NULL) { 
-        cout << node->data << " "; 
-        node = node->next; 
+void printList(Node* node) {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
     }
     cout << endl;
 }
@@ -90,41 +90,40 @@ int getIntersectionNode (Node* head1, Node* head2) {
         current1 = current1->next;
         current2 = current2->next;
     }
-    
+
     return -1;
 }
 
 /* ------------------- MAIN DRIVER CODE ----------------- */
 
-// Driver Code 
-int main() 
-{ 
-    /*  Create two linked lists        
-        1st 10->15->30 
-        2nd 3->6->9->15->30  
+// Driver Code
+int main() {
+    /*  Create two linked lists
+        1st 10->15->30
+        2nd 3->6->9->15->30
 
         15 is the intersection point  */
-    Node* newNode; 
-  
-    // Addition of new nodes 
+    Node* newNode;
+
+    // Addition of new nodes
     Node* head1 = new Node(10);
     Node* head2 = new Node(3);
-  
-    head2->next = new Node(6); 
-    head2->next->next = new Node(9); 
-  
+
+    head2->next = new Node(6);
+    head2->next->next = new Node(9);
+
     newNode = new Node(15);
-    head1->next = newNode; 
-    head2->next->next->next = newNode; 
-  
-    newNode = new Node(30); 
-    head1->next->next = newNode; 
+    head1->next = newNode;
+    head2->next->next->next = newNode;
+
+    newNode = new Node(30);
+    head1->next->next = newNode;
     head2->next->next->next->next = newNode;
 
     head1->next->next->next = NULL;
     head2->next->next->next->next->next = NULL;
-  
-    cout << "The node of intersection is " 
+
+    cout << "The node of intersection is "
          << getIntersectionNode (head1, head2) << ".\n";
     return 0;
 }

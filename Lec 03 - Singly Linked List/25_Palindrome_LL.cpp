@@ -1,8 +1,8 @@
 /*  PROBLEM:
-    Given a singly linked list of characters, write a function 
+    Given a singly linked list of characters, write a function
     that returns true if the given list is a palindrome, else false.
 
-    Approach 1 - (Use a stack) 
+    Approach 1 - (Use a stack)
     1. Push every node from head to tail into stack.
     2. Traverse the list again and compare it with every popped element.
     3. If all matched, return true, else return false.
@@ -16,7 +16,7 @@
     Time Complexity: O(n)   Space Complexity: O(1)
 
     Approach 3 - (Using Recursion)
-    1. Use two pointers - left and right. Left is at start in the 
+    1. Use two pointers - left and right. Left is at start in the
        beginning and right is at the end.
     2. Increment left and decrement right pointers, and call the
        function recursively on the sublist.
@@ -45,10 +45,10 @@ void push (Node** head_ref, int new_data) {
     *head_ref = new_node;
 }
 
-void printList(Node* node) { 
-    while (node != NULL) { 
-        cout << node->data << " "; 
-        node = node->next; 
+void printList(Node* node) {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
     }
     cout << endl;
 }
@@ -63,7 +63,7 @@ void reverse (Node** head_ref) {
         current->next = previous;
         previous = current;
         current = subsequent;
-    } 
+    }
     *head_ref = previous;
 }
 
@@ -80,11 +80,11 @@ bool compareLists (Node* head1, Node* head2) {
             return false;
     }
 
-    // If both temp1 and temp2 point to NULL now, 
+    // If both temp1 and temp2 point to NULL now,
     // it means the lists are equal.
     if (temp1 == NULL && temp2 == NULL)
         return true;
-    
+
     // If reached here, means one list is NULL while
     // other is not.
     return false;
@@ -100,7 +100,7 @@ bool isPalindrome1 (struct Node* head) {
 
     if (head != NULL && head->next != NULL) {
         // Get the middle of node by slow and fast ptr method
-        while (fast_ptr != NULL && fast_ptr->next != NULL) { 
+        while (fast_ptr != NULL && fast_ptr->next != NULL) {
             fast_ptr = fast_ptr->next->next;
             // We need previous of the slow_ptr for the
             // linked lists with odd elements
@@ -109,9 +109,9 @@ bool isPalindrome1 (struct Node* head) {
         }
 
         // fast pointer will become Null if there are even
-        // elements in the list. If not Null, we need to 
-        // skip the middle node and store it somewhere so 
-        // that we can restore the original list 
+        // elements in the list. If not Null, we need to
+        // skip the middle node and store it somewhere so
+        // that we can restore the original list
         if (fast_ptr != NULL) {
             middle_node = slow_ptr;
             slow_ptr = slow_ptr->next;
@@ -123,9 +123,9 @@ bool isPalindrome1 (struct Node* head) {
         reverse(&second_half);
         result = compareLists(head, second_half);
 
-        // Now reverse the second half again    
+        // Now reverse the second half again
         reverse(&second_half);
-        
+
         // Connect the second half back to first half
         // If there was a middle node (odd sized)
         if (middle_node!=NULL) {
@@ -143,18 +143,18 @@ bool isPalindromeUtil (Node** left, Node* right) {
     // Base Case
     if (right == NULL)
         return true;
-    
+
     // Check if sublist is palindrome or not
     bool temp = isPalindromeUtil(left, right->next);
     if (temp == false)
         return false;
-    
+
     // Check values at current left and right
     bool result = (right->data == (*left)->data);
 
     // Move left to next node
     *left = (*left)->next;
-    
+
     return result;
 }
 
@@ -163,24 +163,23 @@ bool isPalindrome2(Node* head) {
 }
 
 /* ----------------- MAIN DRIVER CODE -------------- */
-int main() 
-{
-    struct Node* head = NULL; 
-    char str[] = "abacaba"; 
-  
+int main() {
+    struct Node* head = NULL;
+    char str[] = "abacaba";
+
     for (int i = 0; str[i] != '\0'; i++)
         push(&head, str[i]);
-    
-    printList(head); 
+
+    printList(head);
     isPalindrome1(head) ? printf("Is Palindrome.\n") : printf("Not Palindrome.\n");
     isPalindrome2(head) ? printf("Is Palindrome.\n") : printf("Not Palindrome.\n");
-  
-    return 0; 
-} 
+
+    return 0;
+}
 
 /* ADDITIONAL POINT:
-    
-    If suppose we are asked to find palindromic nature of 
+
+    If suppose we are asked to find palindromic nature of
     a list that contains loop, then we do following:
     a) Check if there is a loop using Flyod's algo
     b) Then find the starting point of the loop

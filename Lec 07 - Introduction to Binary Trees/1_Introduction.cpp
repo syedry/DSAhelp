@@ -26,11 +26,11 @@ int main() {
     root->left = newNode(2);
     root->right = newNode(3);
 
-    /*        1 
-            /   \ 
-          2       3 
-        /   \    /  \ 
-       NULL NULL NULL NULL  
+    /*        1
+            /   \
+          2       3
+        /   \    /  \
+       NULL NULL NULL NULL
     */
     return 0;
 }

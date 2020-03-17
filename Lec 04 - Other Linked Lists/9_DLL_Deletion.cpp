@@ -22,10 +22,10 @@ struct Node {
 };
 
 // Auxiliary Function to Traverse list
-void printList(Node* node)  {  
-    while (node != NULL) {  
-        cout << node->data << " ";  
-        node = node->next;  
+void printList(Node* node)  {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
     }
     cout << endl;
 }
@@ -43,42 +43,41 @@ void push (Node** head_ref, int new_data) {
 void deleteNode (Node** head_ref, Node* P) {
     if (*head_ref == NULL || P == NULL)
         return;
-    
+
     // If node to be deleted is head node
     if (*head_ref == P)
         *head_ref = P->next;
-    
+
     // Change next only if node to be deleted is NOT the last node
     if (P->next != NULL)
         P->next->prev = P->prev;
-    
+
     // Change prev only if node to be deleted is NOT the first node
     if (P->prev != NULL)
         P->prev->next = P->next;
-    
+
     delete P;
 }
 
 /* ----------------- MAIN DRIVER CODE ------------------ */
-int main()  
-{
-    Node* head = NULL;  
+int main() {
+    Node* head = NULL;
     // Created DLL: 10<->8<->4<->2
-    push(&head, 2);  
-    push(&head, 4);  
-    push(&head, 8);  
-    push(&head, 10);  
-  
-    cout << "Original Linked list:\n";  
-    printList(head);  
-  
+    push(&head, 2);
+    push(&head, 4);
+    push(&head, 8);
+    push(&head, 10);
+
+    cout << "Original Linked list:\n";
+    printList(head);
+
     deleteNode(&head, head);    //delete first node
     deleteNode(&head, head->next); // delete middle node
     deleteNode(&head, head->next); // delete last node
 
     // Modified linked list will be NULL<-8->NULL
-    cout << "Modified Linked list:\n";  
-    printList(head);  
+    cout << "Modified Linked list:\n";
+    printList(head);
 
-    return 0; 
-}  
+    return 0;
+}

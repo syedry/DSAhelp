@@ -64,19 +64,17 @@ void insertEnd (Node** head_ref, int new_data) {
         last = last->next;
     last->next = new_node;
 
-    return; 
+    return;
 }
 
 // Function to print the list
-void printList(Node *node)  
-{  
-    while (node != NULL)  
-    {  
-        cout<<" "<<node->data;  
-        node = node->next;  
+void printList(Node *node) {
+    while (node != NULL) {
+        cout<<" "<<node->data;
+        node = node->next;
     }
-    cout << endl;  
-}  
+    cout << endl;
+}
 
 /* -------------- MAIN DRIVER CODE ---------------- */
 int main() {

@@ -1,16 +1,16 @@
 // Tutorial: https://www.hackerearth.com/practice/algorithms/graphs/flood-fill-algorithm/tutorial/
 
-/*  Flood fill algorithm can be simply modeled as graph traversal problem, 
-    representing the given area as a matrix and considering every cell of 
-    that matrix as a vertex that is connected to points above it, below it, 
-    to right of it, and to left of it and in case of 8-connections, to the 
+/*  Flood fill algorithm can be simply modeled as graph traversal problem,
+    representing the given area as a matrix and considering every cell of
+    that matrix as a vertex that is connected to points above it, below it,
+    to right of it, and to left of it and in case of 8-connections, to the
     points at both diagonals also.
 
     In general, any cell (x, y) is connected to (x-1, y-1), (x-1, y), (x-1, y+1),
     (x, y-1), (x, y+1), (x+1, y-1), (x+1, y), (x+1, y+1). Of course, boundary
     conditions are to be kept in mind.
 
-    This area now can be modelled as a graph. For (x,y) cell, all possible 8 
+    This area now can be modelled as a graph. For (x,y) cell, all possible 8
     neighbours are its adjacent cells. So DFS or BFS can be used to traverse
     the graph. The pseudocode for DFS is :
 
@@ -37,13 +37,13 @@
     One important use of Flood Fill Algorithm is to solve a matrix maze.
     Lets implement the algorithm below by solving the following question:
 
-    PROBLEM: 
-    A maze is represented by a matrix of size N x M, where rows are 
+    PROBLEM:
+    A maze is represented by a matrix of size N x M, where rows are
     numbered from 1 to N and columns are numbered from 1 to M.
     Each cell of a matrix can be either 0 or 1. If a cell is 0, that
     cell cannot be visited and if it is 1, it can be visited. Allowed
-    moves are U(up), D(down), L(left), R(right). Find a path from cell 
-    (1, 1) to (N, M) given that the source and destination cells always 
+    moves are U(up), D(down), L(left), R(right). Find a path from cell
+    (1, 1) to (N, M) given that the source and destination cells always
     have value 1. If there is no path, print -1.
 */
 
@@ -104,21 +104,21 @@ string solveMaze (int** maze, int n, int m) {
 int main() {
     int N, M;
     cin >> N >> M;
-    
+
     int** maze = new int*[N];
     for (int i = 0; i < N; i++)
         maze[i] = new int[M];
-    
+
     for (int i = 0; i < N; i++)
         for (int j = 0; j < M; j++)
             cin >> maze[i][j];
-    
+
     string path = solveMaze (maze, N, M);
-    
+
     if (path.empty())
         cout << -1 << endl;
     else
         cout << path << endl;
-    
+
     return 0;
 }

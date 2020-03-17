@@ -4,7 +4,7 @@
     a) If the question asks to sort the stack without any loops
        or any other data structure, and only basic stack operations,
        we will solve this using RECURSION.
-    
+
     b) If we are allowed to use another temporary stack, we can
        sort the stack ITERATIVELY as well.
 
@@ -97,7 +97,7 @@ int main() {
     st.push(11);
     st.push(-2);
     st.push(23);
-    
+
     cout << "Original Stack:\n";
     printStack (st);
     cout << endl;

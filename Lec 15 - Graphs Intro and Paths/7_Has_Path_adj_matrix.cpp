@@ -4,7 +4,7 @@ using namespace std;
 bool isReachable(int** edges, int n, int s, int d) {
     if (s == d)
         return true;
-    
+
     bool hasRoute = false;
     bool visited[n+1] = {false};
     queue<int> vertices;
@@ -32,7 +32,7 @@ bool isReachable(int** edges, int n, int s, int d) {
 int main() {
     int V, E;
     cin >> V >> E;
-    
+
     int** graph = new int*[V];
     for (int i = 0; i < V; i++)
         graph[i] = new int[V];
@@ -45,16 +45,16 @@ int main() {
 
     int v1, v2;
     cin >> v1 >> v2;
-    
-    if (isReachable(graph, V, v1, v2)) 
+
+    if (isReachable(graph, V, v1, v2))
         cout << "Path exists.\n";
     else
         cout << "Path doesn't exist.\n";
-    
+
     for (int i = 0; i < V; i++)
         delete[] graph[i];
     delete[] graph;
 
-	return 0; 
+    return 0;
 }
 

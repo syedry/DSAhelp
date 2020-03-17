@@ -4,7 +4,7 @@ using namespace std;
 void printDFS (int** edges, int n, int start_vertex, bool* visited) {
     cout << start_vertex << " ";
     visited[start_vertex] = true;
-    
+
     for (int i = 0; i < n; i++) {
         if (i == start_vertex)
             continue;

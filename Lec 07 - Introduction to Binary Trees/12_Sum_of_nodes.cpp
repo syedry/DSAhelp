@@ -39,20 +39,20 @@ int addIterative (Node* root) {
 }
 
 /* ---------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
-    struct Node* root = new Node(10); 
-    root->left = new Node(11); 
-    root->left->left = new Node(7); 
-    root->left->right = new Node(12); 
-    root->right = new Node(9); 
-    root->right->left = new Node(15); 
-    root->right->right = new Node(8); 
-  
+int main()
+{
+    struct Node* root = new Node(10);
+    root->left = new Node(11);
+    root->left->left = new Node(7);
+    root->left->right = new Node(12);
+    root->right = new Node(9);
+    root->right->left = new Node(15);
+    root->right->right = new Node(8);
+
     cout << addRecursive(root) << endl;
     cout << addIterative(root) << endl;
-    return 0; 
-} 
+    return 0;
+}
 
 /* NOTE:
     If we are supposed to count the number of nodes in a given BT,

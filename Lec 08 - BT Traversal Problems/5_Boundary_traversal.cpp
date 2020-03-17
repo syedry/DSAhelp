@@ -1,8 +1,8 @@
 // Video Link: https://www.youtube.com/watch?v=7yFf4nKsamU
 
 /*  PROBLEM:
-    Given a binary tree, print boundary nodes of BT in 
-    anti-clockwise direction starting from the root. 
+    Given a binary tree, print boundary nodes of BT in
+    anti-clockwise direction starting from the root.
 
     For example, for the following tree:
                      20
@@ -12,18 +12,18 @@
                4   12      25
                   /  \
                 10    14
-    
+
     Output: 20 8 4 10 14 25 22
 
     We break the problem in 3 parts:
     1. Print the left boundary in top-down manner.
-    2. Print all leaf nodes from left to right, which can again be 
+    2. Print all leaf nodes from left to right, which can again be
        sub-divided into two sub-parts:
         2.1 Print all leaf nodes of left sub-tree from left to right.
         2.2 Print all leaf nodes of right subtree from left to right.
     3. Print the right boundary in bottom-up manner.
 
-    We need to take care of one thing that nodes are not printed again. 
+    We need to take care of one thing that nodes are not printed again.
     e.g. The left most node is also the leaf node of the tree.
 */
 
@@ -93,19 +93,18 @@ void boundaryTraversal (Node* root) {
 }
 
 /* --------------- MAIN DRIVER CODE --------------- */
-int main() 
-{ 
-    // Let us construct the tree given in the above diagram 
-    Node* root = new Node(20); 
-    root->left = new Node(8); 
-    root->left->left = new Node(4); 
-    root->left->right = new Node(12); 
-    root->left->right->left = new Node(10); 
-    root->left->right->right = new Node(14); 
-    root->right = new Node(22); 
-    root->right->right = new Node(25); 
-  
-    boundaryTraversal(root); 
-  
-    return 0; 
-} 
+int main() {
+    // Let us construct the tree given in the above diagram
+    Node* root = new Node(20);
+    root->left = new Node(8);
+    root->left->left = new Node(4);
+    root->left->right = new Node(12);
+    root->left->right->left = new Node(10);
+    root->left->right->right = new Node(14);
+    root->right = new Node(22);
+    root->right->right = new Node(25);
+
+    boundaryTraversal(root);
+
+    return 0;
+}

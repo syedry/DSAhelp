@@ -9,11 +9,11 @@
     - If the node is found, check if it's the only node in the list.
       If yes, set head = NULL and delete curr.
     - If the list has more than one node, check if it is the first node of the list.
-      If yes, then move the prev pointer to last node. Then, 
+      If yes, then move the prev pointer to last node. Then,
         head = head->next   and     prev->next = head.  Delete curr.
     - If curr is not first node, we check if it is the last node in the list.
       If yes, set   prev->next = head   and     delete curr.
-    - If node to be deleted is neither the first node and nor the last node, 
+    - If node to be deleted is neither the first node and nor the last node,
       set   prev->next = temp->next     and     delete curr.
 */
 
@@ -62,7 +62,7 @@ void push (Node** head_ref, int data) {
     }
     else
         ptr1->next = ptr1;
-    
+
     *head_ref = ptr1;
 }
 
@@ -109,19 +109,19 @@ void deleteNode (Node** head, int key) {
 /* -------------------- MAIN DRIVER CODE ----------------- */
 int main() {
     Node* head = NULL;
-    push(&head, 2); 
-    push(&head, 5); 
-    push(&head, 7); 
-    push(&head, 8); 
-    push(&head, 10); 
+    push(&head, 2);
+    push(&head, 5);
+    push(&head, 7);
+    push(&head, 8);
+    push(&head, 10);
 
-    cout << "List Before Deletion: "; 
-    printList(head); 
-  
-    deleteNode(&head, 7); 
-  
-    cout << "List After Deletion: "; 
-    printList(head); 
-  
-    return 0; 
+    cout << "List Before Deletion: ";
+    printList(head);
+
+    deleteNode(&head, 7);
+
+    cout << "List After Deletion: ";
+    printList(head);
+
+    return 0;
 }

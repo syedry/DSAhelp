@@ -1,6 +1,6 @@
 /*  PROBLEM:
     Given preorder of a full binary tree, calculate its depth
-    [starting from depth 0]. The preorder is given as a string 
+    [starting from depth 0]. The preorder is given as a string
     with two possible characters:
     'l' denotes the leaf
     'n' denotes internal node
@@ -52,10 +52,9 @@ int findDepth (string preorder) {
 }
 
 /* ---------------- MAIN DRIVER CODE ------------- */
-int main() 
-{ 
-    string tree = "nlnnlll"; 
-    cout << findDepth(tree) << endl; 
-  
-    return 0; 
-} 
+int main() {
+    string tree = "nlnnlll";
+    cout << findDepth(tree) << endl;
+
+    return 0;
+}

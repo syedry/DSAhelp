@@ -16,7 +16,7 @@ void push (Node** head_ref, int new_data) {
     new_node->data = new_data;
     new_node->next = (*head_ref);
     *head_ref = new_node;
-} 
+}
 
 void deleteNode (Node** head_ref, int key) {
     if (*head_ref == NULL) {
@@ -30,9 +30,9 @@ void deleteNode (Node** head_ref, int key) {
         delete temp1;
     }
     else {
-        while (temp1->next != NULL && temp1->next->data != key) 
+        while (temp1->next != NULL && temp1->next->data != key)
             temp1 = temp1->next;
-        
+
         if (temp1 == NULL) {
             cout << "Key not found.\n";
         }
@@ -44,29 +44,28 @@ void deleteNode (Node** head_ref, int key) {
     }
 }
 
-void printList(struct Node *node) { 
-    while (node != NULL) { 
-        cout << node->data << " "; 
-        node = node->next; 
-    } 
+void printList(struct Node *node) {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
+    }
     cout << endl;
-} 
+}
 
 /* -------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
+int main() {
     /* Start with the empty list */
-    struct Node* head = NULL; 
-  
-    push(&head, 7); 
-    push(&head, 1); 
-    push(&head, 3); 
-    push(&head, 2); 
-  
-    puts("Created Linked List: "); 
-    printList(head); 
-    deleteNode(&head, 3); 
-    puts("\nLinked List after Deletion of 3: "); 
-    printList(head); 
-    return 0; 
+    struct Node* head = NULL;
+
+    push(&head, 7);
+    push(&head, 1);
+    push(&head, 3);
+    push(&head, 2);
+
+    puts("Created Linked List: ");
+    printList(head);
+    deleteNode(&head, 3);
+    puts("\nLinked List after Deletion of 3: ");
+    printList(head);
+    return 0;
 }

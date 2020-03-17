@@ -8,12 +8,12 @@ Method 1 - Iterative solution
     3. Return count.
 
 Method 2 - Recursive solution
-    int count(struct Node* head, int key) { 
-        if (head == NULL) 
+    int count(struct Node* head, int key) {
+        if (head == NULL)
             return 0;
-        int frequency = count(head->next, key); 
-        if (head->data == key) 
-            frequency++; 
+        int frequency = count(head->next, key);
+        if (head->data == key)
+            frequency++;
         return frequency;
     }
 Above function is self-explanatory.
@@ -46,28 +46,27 @@ int countIterative (Node* head, int key) {
     return count;
 }
 
-int countRecursive (struct Node* head, int key) { 
-    if (head == NULL) 
+int countRecursive (struct Node* head, int key) {
+    if (head == NULL)
         return 0;
-    int count = countRecursive(head->next, key); 
-    if (head->data == key) 
-        count++; 
+    int count = countRecursive(head->next, key);
+    if (head->data == key)
+        count++;
     return count;
 }
 
 /* -------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
-    Node* head = NULL; 
+int main() {
+    Node* head = NULL;
     //List is 2 -> 1 -> 2 -> 1 -> 3 -> 1 -> NULL
-    push(&head, 1); 
-    push(&head, 3); 
-    push(&head, 1); 
-    push(&head, 2); 
+    push(&head, 1);
+    push(&head, 3);
     push(&head, 1);
     push(&head, 2);
-    
+    push(&head, 1);
+    push(&head, 2);
+
     cout << "Count of 1 is " << countIterative(head, 1) << endl;
     cout << "Count of 2 is " << countRecursive(head, 2) << endl;
-    return 0; 
-} 
+    return 0;
+}

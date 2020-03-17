@@ -1,7 +1,7 @@
 /*  Reversing a queue is easy.
-    - Dequeue all elements from queue and push 
+    - Dequeue all elements from queue and push
       them onto stack.
-    - Now pop all elements from stack and 
+    - Now pop all elements from stack and
       enqueue them in a queue.
 */
 
@@ -39,25 +39,24 @@ void reverseRec (queue<int> &q) {
 }
 
 /* --------------- MAIN DRIVER CODE ------------ */
-int main() 
-{ 
-    queue<int> Queue; 
-    Queue.push(56); 
-    Queue.push(27); 
-    Queue.push(30); 
-    Queue.push(45); 
-    Queue.push(85); 
-    Queue.push(92); 
-    Queue.push(58); 
-    Queue.push(80); 
-    Queue.push(90); 
-    Queue.push(100); 
+int main() {
+    queue<int> Queue;
+    Queue.push(56);
+    Queue.push(27);
+    Queue.push(30);
+    Queue.push(45);
+    Queue.push(85);
+    Queue.push(92);
+    Queue.push(58);
+    Queue.push(80);
+    Queue.push(90);
+    Queue.push(100);
 
-    reverseRec(Queue); 
+    reverseRec(Queue);
     print(Queue);
 
     reverseItr(Queue);
     print(Queue);
 
     return 0;
-} 
+}

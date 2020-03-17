@@ -1,31 +1,31 @@
-/* Given a Linked List and a number n, write a function that returns 
-   the value at the n’th node from end of the Linked List. 
+/* Given a Linked List and a number n, write a function that returns
+   the value at the n’th node from end of the Linked List.
 
 Method 1: Use length of List (Iterative)
     a) Calculate length of the list = len;
     b) Print the (len-n+1)th node from the beginning of the list.
 
 Method 2: Recursive Solution
-    void getNthFromLast(struct Node* head, int n)  
-    { 
-        static int i = 0;  
-        if (head == NULL) 
-            return; 
-        getNthFromLast(head->next, n); 
-        if (++i == n) 
-            printf("%d", head->data); 
-    } 
-Explantaion of Method 2: 
-    The getNthFromLast will keep on calling itself till head is not NULL. 
+    void getNthFromLast(struct Node* head, int n)
+    {
+        static int i = 0;
+        if (head == NULL)
+            return;
+        getNthFromLast(head->next, n);
+        if (++i == n)
+            printf("%d", head->data);
+    }
+Explantaion of Method 2:
+    The getNthFromLast will keep on calling itself till head is not NULL.
     Once head is NULL, c) statement will start executing in stack order of calls.
     So now i will increment n times and function call will return in reverese order.
     In this way, it prints head->data at nth step from the end.
 
 Method 3: Using two pointers
-    Maintain two pointers – reference pointer and main pointer. 
-    Initialize both reference and main pointers to head. 
-    First move reference pointer to n nodes from head. 
-    Now move both pointers one by one until reference pointer reaches end. 
+    Maintain two pointers – reference pointer and main pointer.
+    Initialize both reference and main pointers to head.
+    First move reference pointer to n nodes from head.
+    Now move both pointers one by one until reference pointer reaches end.
     Now main pointer will point to nth node from the end. Return main pointer's data.
 
 In below code, we have implemented Method 3.
@@ -70,15 +70,14 @@ void getNthFromLast (Node* head, int n) {
 }
 
 /* -------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
+int main() {
     // List is 35 -> 15 -> 4 -> 20 -> NULL;
-    Node* head = NULL; 
-    push(&head, 20); 
-    push(&head, 4); 
-    push(&head, 15); 
-    push(&head, 35); 
-  
+    Node* head = NULL;
+    push(&head, 20);
+    push(&head, 4);
+    push(&head, 15);
+    push(&head, 35);
+
     getNthFromLast(head, 3);
     return 0;
-} 
+}

@@ -1,11 +1,11 @@
-// Video Link: https://www.youtube.com/watch?v=xbpUHSKoALg 
+// Video Link: https://www.youtube.com/watch?v=xbpUHSKoALg
 
 #include <bits/stdc++.h>
 using namespace std;
 
 struct Node {
     int data;
-    Node* next; 
+    Node* next;
     Node* random;
     Node (int x) {
         data = x;
@@ -65,14 +65,14 @@ Node* cloneOptimium (Node* head) {
     // Adjust the random pointers of newly added nodes
     current = head;
     while (current) {
-        if (current->next) 
+        if (current->next)
             current->next->random = current->random ? current->random->next : current->random;
-        
+
         // move to next newly added node by skipping original node
         current = current->next ? current->next->next : current->next;
     }
 
-    // Now we need to separate the original and cloned list 
+    // Now we need to separate the original and cloned list
     Node* original = head;
     Node* copy = head->next;
     temp = copy;
@@ -86,8 +86,8 @@ Node* cloneOptimium (Node* head) {
     return temp;
 }
 
-int main() 
-{
+/* ----------------------- MAIN DRIVER CODE -------------------- */
+int main() {
     Node* start = new Node(1);
     start->next = new Node(2);
     start->next->next = new Node(3);

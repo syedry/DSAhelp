@@ -12,16 +12,16 @@ struct Node {
     }
 };
 
-void push(Node** head_ref, int new_data) { 
+void push(Node** head_ref, int new_data) {
     Node* new_node = new Node(new_data);
     new_node->next = (*head_ref);
     (*head_ref) = new_node;
 }
 
-void printList(struct Node *node) { 
-    while (node!=NULL) { 
-        printf("%d ", node->data); 
-        node = node->next; 
+void printList(struct Node *node) {
+    while (node!=NULL) {
+        printf("%d ", node->data);
+        node = node->next;
     }
     printf("\n");
 }
@@ -35,22 +35,21 @@ void deleteNode(Node* node_ptr){
 }
 
 /* --------------------------- MAIN DRIVER CODE ------------------ */
-int main()  
-{  
-    Node* head = NULL;   
+int main() {
+    Node* head = NULL;
     // 1->12->1->4->1
-    push(&head, 1);  
-    push(&head, 4);  
-    push(&head, 1);  
-    push(&head, 12);  
-    push(&head, 1);  
-  
-    cout << "Before deleting: \n";  
-    printList(head);  
+    push(&head, 1);
+    push(&head, 4);
+    push(&head, 1);
+    push(&head, 12);
+    push(&head, 1);
 
-    deleteNode(head->next->next);  
-      
-    cout << "After deleting: \n";  
-    printList(head);  
-    return 0; 
+    cout << "Before deleting: \n";
+    printList(head);
+
+    deleteNode(head->next->next);
+
+    cout << "After deleting: \n";
+    printList(head);
+    return 0;
 }

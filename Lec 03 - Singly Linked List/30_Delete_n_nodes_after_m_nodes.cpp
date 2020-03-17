@@ -12,16 +12,16 @@ struct Node {
     }
 };
 
-void push(Node** head_ref, int new_data) { 
+void push(Node** head_ref, int new_data) {
     Node* new_node = new Node(new_data);
     new_node->next = (*head_ref);
     (*head_ref) = new_node;
 }
 
-void printList(struct Node *node) { 
-    while (node!=NULL) { 
-        printf("%d ", node->data); 
-        node = node->next; 
+void printList(struct Node *node) {
+    while (node!=NULL) {
+        printf("%d ", node->data);
+        node = node->next;
     }
     printf("\n");
 }
@@ -40,7 +40,7 @@ void skipMdeleteN(Node* head, int M, int N) {
         // If we reached end of list, we should return
         if (current == NULL)
             return;
-        
+
         // Start from next node and delete N nodes
         temp = current->next;
         for (count = 1; count <= N && temp != NULL; count++) {
@@ -56,30 +56,29 @@ void skipMdeleteN(Node* head, int M, int N) {
 }
 
 /* ---------------------- MAIN DRIVER CODE ------------------- */
-int main()  
-{
-    //  1->2->3->4->5->6->7->8->9->10 
-    Node* head = NULL;  
+int main() {
+    //  1->2->3->4->5->6->7->8->9->10
+    Node* head = NULL;
     int M=2, N=3;
     push(&head, 11);
-    push(&head, 10);  
-    push(&head, 9);  
-    push(&head, 8);  
-    push(&head, 7);  
-    push(&head, 6);  
-    push(&head, 5);  
-    push(&head, 4);  
-    push(&head, 3);  
-    push(&head, 2);  
-    push(&head, 1);  
-  
-    cout << "M = " << M<< " N = " << N << "\nGiven Linked list is:\n";  
-    printList(head);  
-  
-    skipMdeleteN(head, M, N);  
-  
-    cout<<"Linked list after deletion is :\n";  
-    printList(head);  
-  
-    return 0;  
-}  
+    push(&head, 10);
+    push(&head, 9);
+    push(&head, 8);
+    push(&head, 7);
+    push(&head, 6);
+    push(&head, 5);
+    push(&head, 4);
+    push(&head, 3);
+    push(&head, 2);
+    push(&head, 1);
+
+    cout << "M = " << M<< " N = " << N << "\nGiven Linked list is:\n";
+    printList(head);
+
+    skipMdeleteN(head, M, N);
+
+    cout<<"Linked list after deletion is :\n";
+    printList(head);
+
+    return 0;
+}

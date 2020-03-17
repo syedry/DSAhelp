@@ -7,7 +7,7 @@ Input: 5 -> 10 -> 4 -> 32 -> 16 -> NULL, x = 41.
 Output: 5 -> 10 -> 4 -> 41 -> 32 -> 16 -> NULL.
 
 Method 1: Using the length of the linked list.
-    Find the number of nodes by traversing the entire linked list once. 
+    Find the number of nodes by traversing the entire linked list once.
     Calculate c = (len)/2; if len is even or else c = (len+1)/2;
     Traverse again the first c nodes and insert the new node after cth node.
 
@@ -37,7 +37,7 @@ Node* getNode (int data) {
 
 void insertAtMid (Node** head_ref, int x) {
     // If list is empty, make the new node as head
-    if (*head_ref == NULL) 
+    if (*head_ref == NULL)
         *head_ref = getNode(x);
     else {
         Node* newNode = getNode(x);
@@ -47,7 +47,7 @@ void insertAtMid (Node** head_ref, int x) {
 
         while (fast && fast->next) {
             //move slow pointer to next node
-            slow = slow->next; 
+            slow = slow->next;
             //move fast pointer two nodes at a time
             fast = fast->next->next;
         }
@@ -56,33 +56,31 @@ void insertAtMid (Node** head_ref, int x) {
     }
 }
 
-void display(Node* head) 
-{ 
-    while (head != NULL) { 
-        cout << head->data << " "; 
-        head = head->next; 
+void display(Node* head) {
+    while (head != NULL) {
+        cout << head->data << " ";
+        head = head->next;
     }
-    cout << endl; 
-} 
+    cout << endl;
+}
 
 /* -------------- MAIN DRIVER CODE ---------------- */
 int main() {
-    // Creating the list 1->2->4->5 
-    Node* head = NULL; 
-    head = getNode(1); 
-    head->next = getNode(2); 
-    head->next->next = getNode(4); 
-    head->next->next->next = getNode(5); 
-  
-    cout << "Linked list before insertion: "; 
-    display(head); 
-  
-    int x = 3; 
-    insertAtMid(&head, x); 
-  
-    cout << "\nLinked list after insertion: "; 
-    display(head); 
-  
-    return 0; 
-}
+    // Creating the list 1->2->4->5
+    Node* head = NULL;
+    head = getNode(1);
+    head->next = getNode(2);
+    head->next->next = getNode(4);
+    head->next->next->next = getNode(5);
 
+    cout << "Linked list before insertion: ";
+    display(head);
+
+    int x = 3;
+    insertAtMid(&head, x);
+
+    cout << "\nLinked list after insertion: ";
+    display(head);
+
+    return 0;
+}

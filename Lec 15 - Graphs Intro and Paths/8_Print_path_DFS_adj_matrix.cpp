@@ -6,12 +6,12 @@ bool path (int** adj, int n, int v1, int v2, bool* visited, vector<int> &v) {
     visited[v1] = true;
     if (v1 == v2)
         return true;
-    
+
     for (int i = 0; i < n; i++)
         if (!visited[i] && adj[v1][i] == 1)
             if (path(adj, n, i , v2, visited, v))
                 return true;
-    
+
     v.pop_back();
     return false;
 }
@@ -27,7 +27,7 @@ int main() {
         for (int j = 0; j < V; j++)
             adj[i][j] = 0;
     }
-    
+
     int a, b;
     for (int i = 0; i < E; i++) {
         cin >> a >> b;
@@ -39,12 +39,12 @@ int main() {
     cin >> v1 >> v2;
     vector<int> v;
     bool* visited = new bool[V]();
-    
+
     if (path(adj, V, v1, v2, visited, v)){
         for (int i = 0; i < v.size(); i++)
             cout << v[i] << " ";
     }
     cout << endl;
-    
+
     return 0;
 }

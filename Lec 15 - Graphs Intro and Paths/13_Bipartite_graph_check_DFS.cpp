@@ -1,15 +1,15 @@
-/*  Below is the algorithm to check bipartiteness of 
+/*  Below is the algorithm to check bipartiteness of
     graph using DFS:
 
-    1. Use a color[] array which stores 0 or 1 for every 
+    1. Use a color[] array which stores 0 or 1 for every
        node which denotes opposite colors.
     2. Call the function DFS from any node.
-    3. If the node u has not been visited previously, then 
-       assign !color[v] to color[u] and call DFS again to 
+    3. If the node u has not been visited previously, then
+       assign !color[v] to color[u] and call DFS again to
        visit nodes connected to u.
-    4. If at any point, color[u] is equal to !color[v], then 
+    4. If at any point, color[u] is equal to !color[v], then
        the node is bipartite.
-    5. Modify the DFS function such that it returns a boolean 
+    5. Modify the DFS function such that it returns a boolean
        value at the end.
 */
 
@@ -53,6 +53,6 @@ int main() {
         cout << "Yes\n";
     else
         cout << "No\n";
-    
+
     return 0;
 }

@@ -15,20 +15,20 @@ struct Node {
     Node* next;
 };
 
-void printList(struct Node *head) { 
-    Node *temp = head; 
-    while(temp != NULL) { 
-        printf("%d  ", temp->data); 
-        temp = temp->next; 
+void printList(struct Node *head) {
+    Node *temp = head;
+    while(temp != NULL) {
+        printf("%d  ", temp->data);
+        temp = temp->next;
     }
     cout << endl;
-} 
-  
-void push(struct Node** head_ref, int new_data) { 
-    struct Node* new_node = new Node; 
-    new_node->data  = new_data; 
-    new_node->next = (*head_ref); 
-    (*head_ref)    = new_node; 
+}
+
+void push(struct Node** head_ref, int new_data) {
+    struct Node* new_node = new Node;
+    new_node->data  = new_data;
+    new_node->next = (*head_ref);
+    (*head_ref)    = new_node;
 }
 
 // Function to insert a node in sorted linked list
@@ -63,22 +63,21 @@ void insertionSort (Node** head_ref) {
 }
 
 /* -------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
-    struct Node *a = NULL; 
-    push(&a, 5); 
-    push(&a, 20); 
-    push(&a, 4); 
-    push(&a, 3); 
-    push(&a, 30); 
-  
-    printf("Linked List before sorting \n"); 
-    printList(a); 
-  
-    insertionSort(&a); 
-  
-    printf("\nLinked List after sorting \n"); 
-    printList(a); 
-  
-    return 0; 
+int main() {
+    struct Node *a = NULL;
+    push(&a, 5);
+    push(&a, 20);
+    push(&a, 4);
+    push(&a, 3);
+    push(&a, 30);
+
+    printf("Linked List before sorting \n");
+    printList(a);
+
+    insertionSort(&a);
+
+    printf("\nLinked List after sorting \n");
+    printList(a);
+
+    return 0;
 }

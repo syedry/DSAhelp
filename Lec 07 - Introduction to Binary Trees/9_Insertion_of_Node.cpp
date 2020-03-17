@@ -1,13 +1,13 @@
 // No Video Link
 
 /* PROBLEM: Given a binary tree and a key, insert the key into the binary tree
-            at first position available in level order. 
-    
+            at first position available in level order.
+
     APPROACH:
-    
-    The idea is to do iterative level order traversal of the given tree using queue. 
-    If we find a node whose left child is empty, we make new key as left child of the node. 
-    Else if we find a node whose right child is empty, we make new key as right child. 
+
+    The idea is to do iterative level order traversal of the given tree using queue.
+    If we find a node whose left child is empty, we make new key as left child of the node.
+    Else if we find a node whose right child is empty, we make new key as right child.
     We keep traversing the tree until we find a node whose either left or right is empty.
 */
 
@@ -43,7 +43,7 @@ void levelOrder (Node* current) {
 void insertNode (Node* root, int key) {
     queue<Node*> q;
     q.push(root);
-    
+
     // Do a level order traversal until we find empty place
     while (!q.empty()) {
         Node* current = q.front();
@@ -55,35 +55,34 @@ void insertNode (Node* root, int key) {
         }
         else
             q.push(current->left);
-        
+
         if (!(current->right)) {
             current->right = new Node(key);
             break;
         }
-        else 
+        else
             q.push(current->right);
     }
 }
 
 /* ---------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
-    Node* root = new Node(10); 
-    root->left = new Node(11); 
-    root->left->left = new Node(7); 
-    root->right = new Node(9); 
-    root->right->left = new Node(15); 
-    root->right->right = new Node(8); 
-  
-    cout << "Level order traversal before insertion:"; 
-    levelOrder(root); 
-  
-    int key = 12; 
-    insertNode(root, key); 
-  
-    cout << endl; 
-    cout << "Level order traversal after insertion:"; 
-    levelOrder(root); 
-  
-    return 0; 
-} 
+int main() {
+    Node* root = new Node(10);
+    root->left = new Node(11);
+    root->left->left = new Node(7);
+    root->right = new Node(9);
+    root->right->left = new Node(15);
+    root->right->right = new Node(8);
+
+    cout << "Level order traversal before insertion:";
+    levelOrder(root);
+
+    int key = 12;
+    insertNode(root, key);
+
+    cout << endl;
+    cout << "Level order traversal after insertion:";
+    levelOrder(root);
+
+    return 0;
+}

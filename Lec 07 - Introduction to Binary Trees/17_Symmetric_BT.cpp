@@ -55,9 +55,9 @@ bool isMirrorItr(Node* root) {
         }
         // If one child is present and other is null, return false
         // as tree is not symmetric
-        else if (leftNode->left || rightNode->right) 
+        else if (leftNode->left || rightNode->right)
             return false;
-        
+
         // Push right child of left subtree and left child
         // of right subtree
         if (leftNode->right && rightNode->left) {
@@ -72,20 +72,19 @@ bool isMirrorItr(Node* root) {
 }
 
 /* ---------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
-    Node *root = new Node(1); 
-    root->left = new Node(2); 
-    root->right = new Node(2); 
-    root->left->left = new Node(3); 
-    root->left->right = new Node(4); 
-    root->right->left = new Node(4); 
-    root->right->right = new Node(3); 
+int main() {
+    Node *root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(2);
+    root->left->left = new Node(3);
+    root->left->right = new Node(4);
+    root->right->left = new Node(4);
+    root->right->right = new Node(3);
 
     //This will check if our both functions are working
-    if(isMirrorRec(root) && isMirrorItr(root))  
-        cout << "The given tree is Symmetric.\n"; 
+    if(isMirrorRec(root) && isMirrorItr(root))
+        cout << "The given tree is Symmetric.\n";
     else
-        cout << "The given tree is not Symmetric.\n"; 
-    return 0; 
-} 
+        cout << "The given tree is not Symmetric.\n";
+    return 0;
+}

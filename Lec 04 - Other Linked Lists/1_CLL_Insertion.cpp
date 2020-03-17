@@ -26,7 +26,7 @@
     1. Create a node, say T.
     2. Search the node after which T is to be inserted, say that node be P.
     3. Make T->next = P->next.
-    4. P->next = T. 
+    4. P->next = T.
 */
 
 #include<bits/stdc++.h>
@@ -78,7 +78,7 @@ Node* addToEmpty (Node* last, int data) {
 Node* addBegin (Node* last, int data) {
     if (last == NULL)
         return addToEmpty(last, data);
-    
+
     Node* temp = new Node(data);
     temp->next = last->next;
     last->next = temp;
@@ -89,7 +89,7 @@ Node* addBegin (Node* last, int data) {
 Node* addEnd (Node* last, int data) {
     if (last == NULL)
         return addToEmpty(last, data);
-    
+
     Node* temp = new Node(data);
     temp->next = last->next;
     last->next = temp;
@@ -101,7 +101,7 @@ Node* addEnd (Node* last, int data) {
 Node* addAfter (Node* last, int data, int item) {
     if (last == NULL)
         return NULL;
-    
+
     Node *temp, *p;
     p = last->next;
     do {
@@ -122,18 +122,17 @@ Node* addAfter (Node* last, int data, int item) {
 }
 
 /* ------------------- MAIN DRIVER CODE ------------------ */
-int main() 
-{ 
-    struct Node *last = NULL; 
-  
-    last = addToEmpty(last, 6); 
-    last = addBegin(last, 4); 
-    last = addBegin(last, 2); 
-    last = addEnd(last, 8); 
-    last = addEnd(last, 12); 
-    last = addAfter(last, 10, 8); 
-  
-    printList(last); 
-  
-    return 0; 
-} 
+int main() {
+    struct Node *last = NULL;
+
+    last = addToEmpty(last, 6);
+    last = addBegin(last, 4);
+    last = addBegin(last, 2);
+    last = addEnd(last, 8);
+    last = addEnd(last, 12);
+    last = addAfter(last, 10, 8);
+
+    printList(last);
+
+    return 0;
+}

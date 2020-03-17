@@ -12,9 +12,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node  {  
-    public: 
-        int data;  
+class Node  {
+    public:
+        int data;
         Node *next;
         Node(int data) {
             this->data = data;
@@ -23,18 +23,18 @@ class Node  {
 };
 
 // Auxiliary Function
-void printList(Node *start)  {  
-    Node *temp;  
-      
-    if(start != NULL)  {  
-        temp = start;  
-        do {  
-        cout<<temp->data<<" ";  
-        temp = temp->next;  
-        } while(temp != start);  
+void printList(Node *start)  {
+    Node *temp;
+
+    if(start != NULL)  {
+        temp = start;
+        do {
+        cout<<temp->data<<" ";
+        temp = temp->next;
+        } while(temp != start);
     }
     cout << endl;
-} 
+}
 
 void push (Node** head_ref, int data) {
     Node* ptr1 = new Node(data);
@@ -50,7 +50,7 @@ void push (Node** head_ref, int data) {
     }
     else
         ptr1->next = ptr1;
-    
+
     *head_ref = ptr1;
 }
 
@@ -61,8 +61,8 @@ void splitList (Node* head, Node** head1_ref, Node** head2_ref) {
 
     if (head == NULL)
         return;
-    
-    /* If there are odd nodes in the circular list 
+
+    /* If there are odd nodes in the circular list
        then fast_ptr->next becomes head and for
        even nodes fast_ptr->next->next becomes head. */
     while (fast_ptr->next != head && fast_ptr->next->next != head) {
@@ -73,13 +73,13 @@ void splitList (Node* head, Node** head1_ref, Node** head2_ref) {
     // If there are even number of nodes, then move fast_ptr
     if (fast_ptr->next->next == head)
         fast_ptr = fast_ptr->next;
-    
+
     // Set the head pointer of first half
     *head1_ref = head;
     // Set the head pointer of second half
     if (head->next != head)
         *head2_ref = slow_ptr->next;
-    
+
     // Make second half circular
     fast_ptr->next = slow_ptr->next;
     // Make first half circular
@@ -87,28 +87,27 @@ void splitList (Node* head, Node** head1_ref, Node** head2_ref) {
 }
 
 /* ------------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
-    struct Node *head = NULL; 
-    struct Node *head1 = NULL; 
-    struct Node *head2 = NULL;   
+int main() {
+    struct Node *head = NULL;
+    struct Node *head1 = NULL;
+    struct Node *head2 = NULL;
 
     /* Created linked list will be 12->56->2->11 */
-    push(&head, 12);  
-    push(&head, 56);    
-    push(&head, 2);    
-    push(&head, 11);    
+    push(&head, 12);
+    push(&head, 56);
+    push(&head, 2);
+    push(&head, 11);
 
-    printf("Original Circular Linked List: "); 
-    printList(head);       
+    printf("Original Circular Linked List: ");
+    printList(head);
 
-    splitList(head, &head1, &head2); 
+    splitList(head, &head1, &head2);
 
-    printf("First Circular Linked List: "); 
-    printList(head1);   
+    printf("First Circular Linked List: ");
+    printList(head1);
 
-    printf("Second Circular Linked List: "); 
-    printList(head2);   
+    printf("Second Circular Linked List: ");
+    printList(head2);
 
-    return 0; 
-}  
+    return 0;
+}

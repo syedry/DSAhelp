@@ -1,5 +1,5 @@
 /*
-    Following are the ways of implementing stacks: 
+    Following are the ways of implementing stacks:
     a) Simple array based implementation - C way (using struct) and C++ way (using class)
     b) Dynamic array based implementation
     c) Linked List implementation   (left to the reader for implementation)
@@ -78,18 +78,18 @@ int main() {
                 scanf("%d", &val);
                 push(stack, val);
                 break;
-            
+
             case 2:
                 printf("%d is popped out.\n", pop(stack));
                 break;
-            
+
             case 3:
                 printf ("%d is the top element.\n", top(stack));
                 break;
-            
+
             case 4:
                 exit(0);
-            
+
             default:
                 printf ("Invalid option.\n");
         }

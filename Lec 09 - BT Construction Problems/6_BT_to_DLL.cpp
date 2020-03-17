@@ -4,9 +4,9 @@
     of the BT.
 
     SOLUTION:
-    The idea is to do inorder traversal of the binary tree. 
-    While doing inorder traversal, keep track of the previously 
-    visited node in a variable say prev. For every visited node, 
+    The idea is to do inorder traversal of the binary tree.
+    While doing inorder traversal, keep track of the previously
+    visited node in a variable say prev. For every visited node,
     make it next of prev and previous of this node as prev.
 */
 
@@ -24,13 +24,13 @@ class Node {
 };
 
 // Auxiliary Function
-void printList(Node *node) { 
-    while (node!=NULL) { 
-        cout << node->data << " "; 
-        node = node->right; 
+void printList(Node *node) {
+    while (node!=NULL) {
+        cout << node->data << " ";
+        node = node->right;
     }
     cout << endl;
-} 
+}
 
 // Main Logic
 void BTtoDLL (Node* root, Node** head) {
@@ -39,7 +39,7 @@ void BTtoDLL (Node* root, Node** head) {
     static Node* prev = NULL;
 
     BTtoDLL(root->left, head);
-    
+
     if (prev == NULL)
         *head = root;
     else {
@@ -52,19 +52,18 @@ void BTtoDLL (Node* root, Node** head) {
 }
 
 /* -------------- MAIN DRIVER CODE ----------------- */
-int main() 
-{
-    Node *root        = new Node(10); 
-    root->left        = new Node(12); 
-    root->right       = new Node(15); 
-    root->left->left  = new Node(25); 
-    root->left->right = new Node(30); 
-    root->right->left = new Node(36); 
-  
-    Node *head = NULL; 
-    BTtoDLL(root, &head); 
- 
-    printList(head); 
-  
-    return 0; 
-} 
+int main() {
+    Node *root        = new Node(10);
+    root->left        = new Node(12);
+    root->right       = new Node(15);
+    root->left->left  = new Node(25);
+    root->left->right = new Node(30);
+    root->right->left = new Node(36);
+
+    Node *head = NULL;
+    BTtoDLL(root, &head);
+
+    printList(head);
+
+    return 0;
+}

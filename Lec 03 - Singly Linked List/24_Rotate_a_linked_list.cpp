@@ -1,17 +1,17 @@
 /*  PROBLEM:
-    Given a singly linked list, rotate the linked list 
-    counter-clockwise by k nodes. 
+    Given a singly linked list, rotate the linked list
+    counter-clockwise by k nodes.
 
     ALGORITHM:
-    1. To rotate the linked list, we need to 
+    1. To rotate the linked list, we need to
        - change next of kth node to NULL
        - change next of the last node to the previous head node
-       - change head to (k+1)th node. 
+       - change head to (k+1)th node.
        So we need to get hold of three nodes: kth node, (k+1)th node and last node.
 
-    2. Traverse the list from the beginning and stop at kth node. 
-       Store pointer to kth node. We can get (k+1)th node using kthNode->next. 
-       Keep traversing till the end and store pointer to last node also. 
+    2. Traverse the list from the beginning and stop at kth node.
+       Store pointer to kth node. We can get (k+1)th node using kthNode->next.
+       Keep traversing till the end and store pointer to last node also.
        Finally, change pointers as stated above.
 */
 
@@ -35,10 +35,10 @@ void push (Node** head_ref, int new_data) {
     *head_ref = new_node;
 }
 
-void printList(Node* node) { 
-    while (node != NULL) { 
-        cout << node->data << " "; 
-        node = node->next; 
+void printList(Node* node) {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
     }
     cout << endl;
 }
@@ -68,31 +68,31 @@ void rotate (Node** head_ref, int k) {
     // Make current point to the last node now
     while (current->next!=NULL)
         current = current->next;
-    
+
     // Change next of the last node to the head
     current->next = *head_ref;
 
-    // Change head of (k+1)th node 
+    // Change head of (k+1)th node
     *head_ref = kthNode->next;
 
     // Change next of kth node to NULL
     kthNode->next = NULL;
 }
 
-int main(void)  
-{ 
-    Node* head = NULL;  
-  
+/* --------------------- MAIN DRIVER CODE ------------------ */
+int main(void) {
+    Node* head = NULL;
+
     // create a list 10->20->30->40->50->60->70
-    for (int i = 70; i > 0; i -= 10)  
-        push(&head, i);  
-  
-    cout << "Given linked list: \n";  
-    printList(head);  
-    rotate(&head, 4);  
-  
-    cout << "\nRotated Linked list: \n";  
-    printList(head);  
-  
-    return (0);  
-}  
+    for (int i = 70; i > 0; i -= 10)
+        push(&head, i);
+
+    cout << "Given linked list: \n";
+    printList(head);
+    rotate(&head, 4);
+
+    cout << "\nRotated Linked list: \n";
+    printList(head);
+
+    return (0);
+}

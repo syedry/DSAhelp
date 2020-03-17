@@ -26,7 +26,7 @@ bool isFullRec (Node* root) {
     // If both - left and right subtrees exist
     if (root->left && root->right)
         return (isFullRec(root->left) && isFullRec(root->right));
-    
+
     return false;
 }
 
@@ -42,11 +42,11 @@ bool isFullItr (Node* root) {
         // If we are at leaf node
         if (node->left == NULL && node->right == NULL)
             continue;
-        
+
         // If either of the child is not null, tree is not full
         if (node->left == NULL || node->right == NULL)
             return false;
-        
+
         q.push(node->left);
         q.push(node->right);
     }
@@ -56,17 +56,18 @@ bool isFullItr (Node* root) {
 /* ------------------- COMPLETE BINARY TREE ------------------ */
 // totalNodes() will be used in Recursive solution
 int totalNodes(Node* root) {
-    if (root == NULL) 
+    if (root == NULL)
         return 0;
     return (1 + totalNodes(root->left) + totalNodes(root->right));
 }
 
-// Since we cannot change the parameters of isCompleteRec, 
+// Since we cannot change the parameters of isCompleteRec,
 // We create a helper function to perform the task recursively
 bool isCompleteHelper(Node* root, int index, int nodes_count) {
     if (root == NULL)   return true;
     if (index >= nodes_count)   return false;
-    return isCompleteHelper(root->left, 2*index+1, nodes_count) && isCompleteHelper(root->right, 2*index+2, nodes_count);
+    return isCompleteHelper(root->left, 2*index+1, nodes_count) && \
+           isCompleteHelper(root->right, 2*index+2, nodes_count);
 }
 
 bool isCompleteRec(Node* root) {
@@ -75,7 +76,7 @@ bool isCompleteRec(Node* root) {
 
 bool isCompleteItr(Node* root) {
     if (root == NULL)   return true;
-    
+
     // flag will be set to true when non-full node is seen
     bool flag = false;
 
@@ -93,7 +94,7 @@ bool isCompleteItr(Node* root) {
         }
         else
             flag = true;
-        
+
         if (temp->right) {
             if (flag)
                 return false;
@@ -120,16 +121,17 @@ int height(Node *root) {
 bool isPerfectHelper(Node* root, int depth, int level) {
     if (root == NULL)   return true;
 
-    // If we are at leaf node, it's depth must be same as 
+    // If we are at leaf node, it's depth must be same as
     // depth of all other leaves
     if (root->left == NULL && root->right == NULL)
         return (depth == level + 1);
-    
+
     // If internal node and one child is empty
     if (root->left == NULL || root->right == NULL)
         return false;
-    
-    return isPerfectHelper(root->left, depth, level+1) && isPerfectHelper(root->right, depth, level+1);
+
+    return isPerfectHelper(root->left, depth, level+1) && \
+           isPerfectHelper(root->right, depth, level+1);
 }
 
 bool isPerfectRec (Node* root) {
@@ -162,7 +164,7 @@ bool isPerfectItr (Node* root) {
         // If we are at leaf node, set flag to true
         if (!temp->left && !temp->right)
             flag = true;
-        
+
         // If the current node has only one child, return false
         if (!temp->left || !temp->right)
             return false;
@@ -175,41 +177,41 @@ bool isSkewedRec (Node* root) {
     // Check if node is NULL or leaf node
     if (root == NULL || (root->left == NULL && root->right == NULL))
         return true;
-    
+
     // Check if the node has two children
     if (root->left && root->right)
         return false;
-    
+
     if (root->left)
         return isSkewedRec(root->left);
-    
+
     return isSkewedRec(root->right);
 }
 
 /* ---------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
+int main()
+{
 
-    struct Node* root = NULL; 
-    root = new Node(1); 
-    root->left = new Node(2); 
-    root->right = new Node(3); 
-    root->left->left = new Node(4); 
+    struct Node* root = NULL;
+    root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
     root->left->right = new Node(5);
-    root->right->left = new Node(6); 
-    root->right->right = new Node(7); 
+    root->right->left = new Node(6);
+    root->right->right = new Node(7);
 
     if (isFullRec(root) && isFullItr(root))
         printf("The Binary Tree is full\n");
-  
-    if (isCompleteRec(root) && isCompleteItr(root)) 
+
+    if (isCompleteRec(root) && isCompleteItr(root))
         printf("The Binary Tree is complete\n");
 
     if (isPerfectRec(root) && isPerfectItr(root))
         printf("The Binary Tree is perfect\n");
-    
+
     if (isSkewedRec(root))
         printf("The Binary Tree is skewed\n");
-    
-    return (0); 
+
+    return (0);
 }

@@ -1,24 +1,24 @@
 /*  PROBLEM:
-    Given a graph, the task is to find if it has a cycle 
+    Given a graph, the task is to find if it has a cycle
     of odd length or not.
 
     SOLUTION:
-    The idea is based on an important fact that a graph 
-    does not contain a cycle of odd length if and only if 
+    The idea is based on an important fact that a graph
+    does not contain a cycle of odd length if and only if
     it is Bipartite, i.e., it can be colored with two colors.
 
-    It is obvious that if a graph has an odd length cycle 
-    then it cannot be Bipartite. In Bipartite graph there 
-    are two sets of vertices such that no vertex in a set 
-    is connected with any other vertex of the same set). 
-    For a cycle of odd length, two vertices must of the same 
+    It is obvious that if a graph has an odd length cycle
+    then it cannot be Bipartite. In Bipartite graph there
+    are two sets of vertices such that no vertex in a set
+    is connected with any other vertex of the same set).
+    For a cycle of odd length, two vertices must of the same
     set be connected which contradicts Bipartite definition.
 
-    Below is code to check if a graph has odd cycle or not. 
+    Below is code to check if a graph has odd cycle or not.
     The code basically checks whether graph is Bipartite.
 */
-#include <bits/stdc++.h> 
-using namespace std; 
+#include <bits/stdc++.h>
+using namespace std;
 
 // Function returns true if it contains odd length cycle
 bool containsOdd (vector<int>* graph, int n) {
@@ -35,7 +35,7 @@ bool containsOdd (vector<int>* graph, int n) {
         for (int i = 0; i < graph[u].size(); i++)
             if (graph[u][i] == u)
                 return true;
-        // For all non colored adjacent vertices 
+        // For all non colored adjacent vertices
         for (int i = 0; i < n; i++) {
             for (auto itr = graph[i].begin(); itr != graph[i].end(); itr++)
                 if (color[*itr] == -1) {
@@ -50,7 +50,7 @@ bool containsOdd (vector<int>* graph, int n) {
     return false;
 }
 
-/* ---------- MAIN DRIVER CODE ------------------- */
+/* ------------------ MAIN DRIVER CODE ----------------- */
 int main() {
     int n, e;
     cin >> n >> e;

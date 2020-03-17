@@ -1,16 +1,16 @@
 /*
-    The diameter of a tree is the number of nodes on the longest 
+    The diameter of a tree is the number of nodes on the longest
     path between two end nodes.
 
     Basic observation:
     The diameter of a tree T is the largest of the following quantities:
     a) the diameter of T’s left subtree
     b) the diameter of T’s right subtree
-    c) the longest path between leaves that goes through the root of T 
+    c) the longest path between leaves that goes through the root of T
        (this can be computed from the heights of the subtrees of T)
-    
+
     The code of above implementation is:
-    
+
         int diameter (Node* root) {
             if (tree == NULL)   return 0;
 
@@ -22,15 +22,15 @@
 
             return max(l_height+r_height+1, max(l_diameter, r_diameter));
         }
-    
+
     Time Complexity: O(n^2)
 
     Here is another way to think about diameter of tree:
-    Diameter of a tree can be calculated by only using the height function, 
-    because the diameter of a tree is nothing but maximum value of 
-    (left_height + right_height + 1) for each node. So we need to calculate 
-    this value (left_height + right_height + 1) for each node and 
-    update the result. 
+    Diameter of a tree can be calculated by only using the height function,
+    because the diameter of a tree is nothing but maximum value of
+    (left_height + right_height + 1) for each node. So we need to calculate
+    this value (left_height + right_height + 1) for each node and
+    update the result.
 
     Time Complexity: O(n)
 */
@@ -54,7 +54,7 @@ int height (Node* root, int &ans) {
 
     int left_height = height(root->left, ans);
     int right_height = height(root->right, ans);
-    
+
     ans = max(ans, 1+left_height+right_height);
 
     return (1 + max(left_height, right_height));
@@ -69,15 +69,14 @@ int diameter (Node* root) {
 }
 
 /* ----------------- MAIN DRIVER CODE ------------- */
-int main() 
-{ 
-    Node* root = new Node(1); 
-    root->left = new Node(2); 
-    root->right = new Node(3); 
-    root->left->left = new Node(4); 
-    root->left->right = new Node(5); 
-  
-    printf("Diameter is %d\n", diameter(root)); 
-  
-    return 0; 
-} 
+int main() {
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+
+    printf("Diameter is %d\n", diameter(root));
+
+    return 0;
+}

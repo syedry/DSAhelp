@@ -1,6 +1,6 @@
-/*  Write a GetNth() function that takes a linked list and an integer index 
-    and returns the data value stored in the node at that index position.   
-    
+/*  Write a GetNth() function that takes a linked list and an integer index
+    and returns the data value stored in the node at that index position.
+
 Iterative approach:
     1. Initialize count = 0
     2. Loop through the link list
@@ -14,7 +14,7 @@ Recursive approach:
     2. if count==n
         return node->data
     3. else
-        return getnth(node->next,n-1)    
+        return getnth(node->next,n-1)
 */
 
 #include <bits/stdc++.h>
@@ -57,23 +57,22 @@ int getNthRecursive (Node* head, int index) {
 }
 
 /* ------------------ MAIN DRIVER CODE -----------------------*/
-int main() 
-{
-    struct Node* head = NULL; 
-     
+int main() {
+    struct Node* head = NULL;
+
     // Use push() to construct below list 15->12->5->4->1
-    push(&head, 1); 
-    push(&head, 4); 
-    push(&head, 5); 
-    push(&head, 12); 
-    push(&head, 15);   
-     
+    push(&head, 1);
+    push(&head, 4);
+    push(&head, 5);
+    push(&head, 12);
+    push(&head, 15);
+
     cout << getNthIterative(head, 1) << endl;
     cout << getNthIterative(head, 3) << endl;
     cout << getNthIterative(head, 4) << endl;
     cout << getNthRecursive(head, 5) << endl;
 
     return 0;
-} 
+}
 
 

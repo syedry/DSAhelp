@@ -3,15 +3,15 @@
 
     SOLUTION:
 
-    We will use a DFS-alike function 'hasCycle()' that will call a 
+    We will use a DFS-alike function 'hasCycle()' that will call a
     utility function 'hasCycleUtil()'. hasCycleUtil() uses visited[]
     and parent to detect cycle in a subgraph reachable from vertex v.
-    We recur the hasCycleUtil() function for all the vertices 
+    We recur the hasCycleUtil() function for all the vertices
     adjacent to vertex v. The main idea then is:
 
     If an adjacent vertex is visited and that adjacent vertex is not
     the parent of the current vertex, then there is cycle.
-    
+
     Time Complexity: O(V+E)
 */
 
@@ -26,7 +26,7 @@ bool hasCycleUtil (vector<int> *adj, bool* visited, int v, int parent) {
             if (hasCycleUtil(adj, visited, *i, v))
                 return true;
         }
-        else if (*i != parent) 
+        else if (*i != parent)
             return true;
     return false;
 }
@@ -57,6 +57,6 @@ int main() {
         cout << "Cycle exists.\n";
     else
         cout << "Cycle doesn't exist.\n";
-    
+
     return 0;
 }

@@ -3,14 +3,14 @@
 
     SOLUTION:
     DFS can be used to detect cycle in a graph. There is a cycle in a graph,
-    only if there is a 'backedge' present in the graph. A back edge is an 
-    edge that is from a node to itself (self-loop) or one of its ancestor 
+    only if there is a 'backedge' present in the graph. A back edge is an
+    edge that is from a node to itself (self-loop) or one of its ancestor
     in the tree produced by DFS.
 
-    To detect a back edge, we can keep track of vertices currently in recursion 
-    stack of function for DFS traversal. If we reach a vertex that is already 
-    in the recursion stack, then there is a cycle in the tree. The edge that 
-    connects current vertex to the vertex in the recursion stack is a back edge. 
+    To detect a back edge, we can keep track of vertices currently in recursion
+    stack of function for DFS traversal. If we reach a vertex that is already
+    in the recursion stack, then there is a cycle in the tree. The edge that
+    connects current vertex to the vertex in the recursion stack is a back edge.
     We have used recStack[] array to keep track of vertices in the recursion stack.
 */
 
@@ -35,7 +35,7 @@ bool hasCycleUtil (vector<int> *adj, bool* visited, bool* recStack, int n, int v
 bool hasCycle(vector<int>* adj, int n) {
     bool* visited = new bool[n]();
     bool* recStack = new bool[n]();
-    
+
     for (int i = 0; i < n; i++)
         if (hasCycleUtil(adj, visited, recStack, n, i))
             return true;
@@ -58,6 +58,6 @@ int main() {
         cout << "Cycle exists.\n";
     else
         cout << "Cycle doesn't exist.\n";
-    
+
     return 0;
 }

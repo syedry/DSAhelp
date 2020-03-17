@@ -3,48 +3,48 @@
         1) push() which adds an element to the top of stack.
         2) pop() which removes an element from top of stack.
         3) findMiddle() which will return middle element of the stack.
-        4) deleteMiddle() which will delete the middle element. 
+        4) deleteMiddle() which will delete the middle element.
 
     SOLUTION:
     The important question is, whether to use linked list or array implementation of stack?
-    We need to find and delete middle element. Deleting an element from middle is not O(1) 
-    for array. Also, we may need to move the middle pointer up when we push an element and 
-    move down when we pop(). In singly linked list, moving middle pointer in both directions 
+    We need to find and delete middle element. Deleting an element from middle is not O(1)
+    for array. Also, we may need to move the middle pointer up when we push an element and
+    move down when we pop(). In singly linked list, moving middle pointer in both directions
     is not possible.
 
-    The idea is to use Doubly Linked List (DLL). We can delete middle element in O(1) time 
-    by maintaining mid pointer. We can move mid pointer in both directions using previous 
+    The idea is to use Doubly Linked List (DLL). We can delete middle element in O(1) time
+    by maintaining mid pointer. We can move mid pointer in both directions using previous
     and next pointers.
 */
 
-#include <bits/stdc++.h> 
-using namespace std; 
+#include <bits/stdc++.h>
+using namespace std;
 
-class DLLNode { 
-	public: 
-	    DLLNode *prev; 
-	    int data;
-	    DLLNode *next;
+class DLLNode {
+    public:
+        DLLNode *prev;
+        int data;
+        DLLNode *next;
         DLLNode(int new_data) {
             data = new_data;
             prev = next = NULL;
         }
-}; 
+};
 
 // Stack is implemented using DLL. It maintains pointer to head
 // and middle nodes and count of nodes.
-class myStack { 
-	public: 
-	    DLLNode *head; 
-	    DLLNode *mid; 
-	    int count;
+class myStack {
+    public:
+        DLLNode *head;
+        DLLNode *mid;
+        int count;
 
         myStack() {
             head = NULL;
             mid = NULL;
             count = 0;
         }
-    
+
         void push (int item);
         int pop ();
         int findMiddle ();
@@ -65,12 +65,12 @@ void myStack :: push(int item) {
     // b) Number of linked list is odd
     if (count == 1) {
         mid = new_node;
-    } 
+    }
     else {
         head->prev = new_node;
         // Update if count is even
         if (count%2 == 0)
-            mid = mid->prev;    
+            mid = mid->prev;
     }
 
     head = new_node;
@@ -85,7 +85,7 @@ int myStack :: pop() {
     int item = head->data;
     head = head->next;
 
-    // If linked list is not yet empty, 
+    // If linked list is not yet empty,
     // update prev of new head as NULL
     if (head != NULL)
         head->prev = NULL;
@@ -93,9 +93,9 @@ int myStack :: pop() {
 
     // Update the mid pointer when we have
     // odd number of items in the stack
-    if (count%2 == 1)  
+    if (count%2 == 1)
         mid = mid->next;
-    
+
     delete start;
     return item;
 }
@@ -121,12 +121,11 @@ void myStack :: deleteMiddle() {
 }
 
 /* --------------------- MAIN DRIVER CODE -------------------- */
-int main()  
-{
+int main() {
     myStack s;
     for (int i = 1; i < 5; i++)
         s.push(2*i);
-    
+
     cout << s.findMiddle() << endl;
     s.pop();
     s.pop();
@@ -134,10 +133,10 @@ int main()
 
     for (int i = 5; i < 8; i++)
         s.push(2*i+1);
-    
+
     cout << s.findMiddle() << endl;
     s.deleteMiddle();
     cout << s.findMiddle() << endl;
 
-    return 0;  
+    return 0;
 }

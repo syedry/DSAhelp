@@ -1,5 +1,5 @@
 /*  PROBLEM:
-    Given a linked list, write a function to reverse every 
+    Given a linked list, write a function to reverse every
     k nodes (where k is an input to the function).
 */
 
@@ -23,10 +23,10 @@ void push (Node** head_ref, int new_data) {
     *head_ref = new_node;
 }
 
-void printList(Node* node) { 
-    while (node != NULL) { 
-        cout << node->data << " "; 
-        node = node->next; 
+void printList(Node* node) {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
     }
     cout << endl;
 }
@@ -51,35 +51,34 @@ Node* reverse (Node* head, int k) {
     // Recursively call the function for the remaining list
     if (subsequent != NULL)
         head->next = reverse(subsequent, k);
-    
+
     // Previous is the new head of the input list
     return previous;
 }
 
 /* --------------------- MAIN DRIVER CODE ------------------ */
-int main()  
-{
-    Node* head = NULL;  
-  
-    // Created Linked list is 1->2->3->4->5->6->7->8 
-    push(&head, 8);  
-    push(&head, 7);  
-    push(&head, 6);  
-    push(&head, 5);  
-    push(&head, 4);  
-    push(&head, 3);  
-    push(&head, 2);     
-    push(&head, 1);      
-  
-    cout << "Given linked list: \n";  
-    printList(head);  
-    head = reverse(head, 3);  
-  
-    cout << "\nReversed Linked list: \n";  
-    printList(head);  
-  
-    return(0);  
-}  
+int main() {
+    Node* head = NULL;
+
+    // Created Linked list is 1->2->3->4->5->6->7->8
+    push(&head, 8);
+    push(&head, 7);
+    push(&head, 6);
+    push(&head, 5);
+    push(&head, 4);
+    push(&head, 3);
+    push(&head, 2);
+    push(&head, 1);
+
+    cout << "Given linked list: \n";
+    printList(head);
+    head = reverse(head, 3);
+
+    cout << "\nReversed Linked list: \n";
+    printList(head);
+
+    return(0);
+}
 
 /* ADDITIONAL POINT:
 
@@ -87,9 +86,9 @@ int main()
     then reverse first k nodes and move the current pointer k
     nodes ahead and then recursively call for the rest of the list.
 
-    count = 0;  
-    while(count < k-1 && current != NULL ) {  
-        current = current->next;  
-        count++;  
+    count = 0;
+    while(count < k-1 && current != NULL ) {
+        current = current->next;
+        count++;
     }
 */

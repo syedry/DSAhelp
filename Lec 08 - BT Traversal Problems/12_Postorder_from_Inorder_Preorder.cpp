@@ -1,5 +1,5 @@
 /*  PROBLEM:
-    Given Inorder and Preorder traversals of a binary tree, 
+    Given Inorder and Preorder traversals of a binary tree,
     print Postorder traversal.
 
     Example:
@@ -40,13 +40,13 @@ class Node {
 
 // Utility function to search x in arr[]
 int search (int arr[], int x, int n) {
-    for (int i = 0; i < n; i++) 
+    for (int i = 0; i < n; i++)
         if (arr[i] == x)
             return i;
     return -1;
 }
 
-// Main Logic 
+// Main Logic
 void printPostOrder (int in[], int pre[], int n) {
     // First element in pre is root, search it in in[]
     int root = search(in, pre[0], n);
@@ -61,13 +61,12 @@ void printPostOrder (int in[], int pre[], int n) {
 }
 
 /* --------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{ 
-    int in[] = { 4, 2, 5, 1, 3, 6 }; 
-    int pre[] = { 1, 2, 4, 5, 3, 6 }; 
-    int n = sizeof(in) / sizeof(in[0]); 
-    cout << "Postorder traversal: " << endl; 
+int main() {
+    int in[] = { 4, 2, 5, 1, 3, 6 };
+    int pre[] = { 1, 2, 4, 5, 3, 6 };
+    int n = sizeof(in) / sizeof(in[0]);
+    cout << "Postorder traversal: " << endl;
     printPostOrder(in, pre, n);
-    cout << endl; 
-    return 0; 
-} 
+    cout << endl;
+    return 0;
+}

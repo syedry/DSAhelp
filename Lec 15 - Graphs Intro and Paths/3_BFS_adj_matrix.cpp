@@ -29,7 +29,7 @@ void BFS(int** edges, int n) {
             printBFS(edges, n, i, visited);
     delete[] visited;
 }
- 
+
 /* ---------------- MAIN DRIVER CODE ---------------- */
 int main() {
     int vertices, edges;

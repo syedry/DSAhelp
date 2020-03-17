@@ -1,7 +1,7 @@
 /*  PROBLEM:
 
     There is a N x M matrix containing uppercase English alphabets only.
-    Your task is to tell if there is a path in the matrix which makes 
+    Your task is to tell if there is a path in the matrix which makes
     the word 'LEETCODE'. There is a path from any cell to all its
     neighbouring cells. A neighbour may share an edge or a corner.
 
@@ -9,7 +9,7 @@
     First line contains two spaced integers M and N.
     Next N lines will contain N rows of the matrix.
 
-    Output: 
+    Output:
     Print 1 if there is a path or else print 0.
 
     Constraints:
@@ -28,12 +28,12 @@ int solveUtil (char graph[][MAX], int n, int m, int r, int c, bool** visited, ch
         int a, b;
         a = r + rr[i];
         b = c + cc[i];
-        
+
         if (a < 0 || b < 0 || a >= n || b >= m)
             continue;
         if (visited[a][b])
             continue;
-        
+
         if (graph[a][b] == arr[0]) {
             visited[a][b] = true;
             int ans = solveUtil (graph, n, m, a, b, visited, arr+1, node+1);
@@ -44,7 +44,7 @@ int solveUtil (char graph[][MAX], int n, int m, int r, int c, bool** visited, ch
     }
     if (node == 8)
         return 1;
-    else 
+    else
         return 0;
 }
 
@@ -56,7 +56,7 @@ int solve(char graph[][MAX],int n, int m) {
         for (int j = 0; j < m; j++)
             visited[i][j] = false;
     }
-    
+
     char arr[] = {'L', 'E', 'E', 'T', 'C', 'O', 'D', 'E'};
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++) {
@@ -72,12 +72,12 @@ int solve(char graph[][MAX],int n, int m) {
 
 /* -------------- MAIN DRIVER CODE ------------- */
 int main() {
-	int N, M, i;
-	char Graph[MAX][MAX];
-	cin >> N >> M;
-	for(i = 0; i < N; i++)
-		cin >> Graph[i];
-	
-	cout << solve (Graph,N,M) << endl;
+    int N, M, i;
+    char Graph[MAX][MAX];
+    cin >> N >> M;
+    for(i = 0; i < N; i++)
+        cin >> Graph[i];
+
+    cout << solve (Graph,N,M) << endl;
     return 0;
 }

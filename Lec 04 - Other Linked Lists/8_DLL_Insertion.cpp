@@ -1,25 +1,25 @@
-/*  A Doubly Linked List (DLL) contains an extra pointer, 
-    typically called previous pointer, together with next pointer 
+/*  A Doubly Linked List (DLL) contains an extra pointer,
+    typically called previous pointer, together with next pointer
     and data which are there in singly linked list.
 
     Advantages over singly linked list
     1) A DLL can be traversed in both forward and backward direction.
-    2) The delete operation in DLL is more efficient if pointer to 
+    2) The delete operation in DLL is more efficient if pointer to
        the node to be deleted is given.
     3) We can quickly insert a new node before a given node.
-    
-    In singly linked list, to delete a node, pointer to the previous 
-    node is needed. To get this previous node, sometimes the list is 
+
+    In singly linked list, to delete a node, pointer to the previous
+    node is needed. To get this previous node, sometimes the list is
     traversed. In DLL, we can get the previous node using previous pointer.
 
     Disadvantages over singly linked list
     1) Every node of DLL Require extra space for an previous pointer.
        However it is possible to implement with single pointer only.
        (This is discussed in 15_Memory_efficient_DLL.cpp)
-    2) All operations require an extra pointer previous to be maintained. 
+    2) All operations require an extra pointer previous to be maintained.
        Due to this, task of fixing links becomes little cumbersome.
 
-    
+
     A node can be added in a DLL in three ways:
     1) At the front of the DLL
     2) After a given node
@@ -99,7 +99,7 @@ void insertAfter (Node* prev_node, int new_data) {
 
     // 6. Change previous of new_node's next node
     if (new_node->next != NULL)
-        new_node->next->prev = new_node; 
+        new_node->next->prev = new_node;
 }
 
 /* Following function adds node in the last of list */
@@ -125,17 +125,16 @@ void append (Node** head_ref, int new_data) {
 }
 
 /* ------------------- MAIN DRIVER CODE --------------------- */
-int main()  
-{  
-    Node* head = NULL; 
+int main() {
+    Node* head = NULL;
     // Try to predict the DLL formed below
-    append(&head, 6);    
-    push(&head, 7);    
-    push(&head, 1);  
-    append(&head, 4);  
-    insertAfter(head->next, 8);  
+    append(&head, 6);
+    push(&head, 7);
+    push(&head, 1);
+    append(&head, 4);
+    insertAfter(head->next, 8);
 
-    printList(head);  
-  
-    return 0;  
-}  
+    printList(head);
+
+    return 0;
+}

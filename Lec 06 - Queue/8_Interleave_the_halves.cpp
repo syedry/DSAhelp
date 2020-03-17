@@ -1,7 +1,7 @@
 /*  PROBLEM:
-    Given a queue of integers of even length, rearrange the 
-    elements by interleaving the first half of the queue with 
-    the second half of the queue. Only stack data structure 
+    Given a queue of integers of even length, rearrange the
+    elements by interleaving the first half of the queue with
+    the second half of the queue. Only stack data structure
     is allowed to be used as auxiliary space.
 
     Input : 11 12 13 14 15 16 17 18 19 20
@@ -20,7 +20,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Main Logic 
+// Main Logic
 void interleave (queue<int> &q) {
     stack <int> s;
     int halfsize = q.size()/2;

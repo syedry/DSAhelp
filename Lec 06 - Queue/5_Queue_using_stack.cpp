@@ -1,7 +1,7 @@
 /*  This is done by using two stacks.
-    Following implementation makes sure that oldest entered element 
-    is always at the top of stack 1, so that deQueue operation just 
-    pops from stack1. To put the element at top of stack1, stack2 is 
+    Following implementation makes sure that oldest entered element
+    is always at the top of stack 1, so that deQueue operation just
+    pops from stack1. To put the element at top of stack1, stack2 is
     used.
 
     enQueue(q, x):
@@ -63,6 +63,6 @@ int main() {
     q.dequeue();
     q.dequeue();
     cout << q.front() << endl;
-    
+
     return 0;
 }

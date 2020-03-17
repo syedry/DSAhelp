@@ -3,7 +3,7 @@
 Method 1: Iterative method
     a) create two pointers, result_ptr which will act as head of result list
        and last_ptr which will be always pointing to the end of result list.
-    b) if first element of list1 is smaller than first element of list2, 
+    b) if first element of list1 is smaller than first element of list2,
        move this first element from list1 to result list and similar for reverse case.
     c) if any list turns NULL, append the remaining list to result list.
 
@@ -20,20 +20,20 @@ class Node {
         Node* next;
 };
 
-Node* A = NULL;  
-Node* B = NULL; 
+Node* A = NULL;
+Node* B = NULL;
 
-void push(Node** head_ref, int new_data)  {  
-    Node* new_node = new Node(); 
-    new_node->data = new_data;  
-    new_node->next = (*head_ref);  
-    (*head_ref) = new_node;  
-}  
+void push(Node** head_ref, int new_data)  {
+    Node* new_node = new Node();
+    new_node->data = new_data;
+    new_node->next = (*head_ref);
+    (*head_ref) = new_node;
+}
 
-void printList(Node *node)  {  
-    while (node!=NULL)  {  
-        cout<<node->data<<" ";  
-        node = node->next;  
+void printList(Node *node)  {
+    while (node!=NULL)  {
+        cout<<node->data<<" ";
+        node = node->next;
     }
     cout << endl;
 }
@@ -57,11 +57,11 @@ void moveNode (Node** source_ref, Node** dest_ref) {
     *dest_ref = new_node;
 }
 
-// Main Logic Code 
+// Main Logic Code
 Node* mergeSorted (Node* a, Node* b) {
     Node* result = NULL;
     // Reference to pointer pointing to last element of the result list.
-    Node** last_ref = &result; 
+    Node** last_ref = &result;
 
     while (1) {
         if (a == NULL) {
@@ -74,7 +74,7 @@ Node* mergeSorted (Node* a, Node* b) {
         }
         else if (a->data <= b->data)
             moveNode (&a, last_ref);
-        else 
+        else
             moveNode (&b, last_ref);
 
         // Tricky way to advance a pointer to the next field
@@ -96,7 +96,7 @@ Node* mergeRecursive (Node* a, Node* b) {
     if (a->data < b->data) {
         result = a;
         result->next = mergeRecursive(a->next, b);
-    } 
+    }
     else {
         result = b;
         result->next = mergeRecursive(a, b->next);
@@ -105,27 +105,26 @@ Node* mergeRecursive (Node* a, Node* b) {
 }
 
 /* -------------- MAIN DRIVER CODE ---------------- */
-int main()  
-{
+int main() {
     Node* res1 = NULL;
-    Node* res2 = NULL;  
-  
+    Node* res2 = NULL;
+
     // Created lists, a: 5->10->15, b: 2->3->20
-    push(&A, 15);  
-    push(&A, 10);  
-    push(&A, 5);  
-  
-    push(&B, 20);  
-    push(&B, 3);  
-    push(&B, 2);  
+    push(&A, 15);
+    push(&A, 10);
+    push(&A, 5);
+
+    push(&B, 20);
+    push(&B, 3);
+    push(&B, 2);
 
     printList(A);
     printList(B);
-    res1 = mergeSorted(A, B);  
-    printList(res1);  
-    
+    res1 = mergeSorted(A, B);
+    printList(res1);
+
     //res2 = mergeRecursive(a, b);
     //printList(res2);
 
-    return 0;  
-} 
+    return 0;
+}

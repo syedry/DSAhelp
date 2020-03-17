@@ -1,15 +1,15 @@
 /*  PROBLEM:
-    Given a directed graph, a source vertex 'src' and a 
-    destination vertex 'dst', print all paths from given 
+    Given a directed graph, a source vertex 'src' and a
+    destination vertex 'dst', print all paths from given
     'src' to 'dst'.
 
     SOLUTION:
 
     Approach 1: Using DFS
-    Start the traversal from source. Keep storing the visited 
-    vertices in an array, say path[]. If we reach the destination 
-    vertex, print contents of path[]. The important thing is to 
-    mark current vertices in path[] as visited also, so that the 
+    Start the traversal from source. Keep storing the visited
+    vertices in an array, say path[]. If we reach the destination
+    vertex, print contents of path[]. The important thing is to
+    mark current vertices in path[] as visited also, so that the
     traversal doesn’t go in a cycle.
 */
 
@@ -38,9 +38,9 @@ void Graph :: addEdge(int v, int w) {
 // Main Logic of Code
 void Graph :: printAllPaths (int s, int d) {
     bool* visited = new bool[vertices];
-    for (int i = 0; i < vertices; i++) 
+    for (int i = 0; i < vertices; i++)
         visited[i] = false;
-    
+
     // An array to store paths
     int* path = new int[vertices];
     int path_index = 0; // Initializing path[] as empty
@@ -60,11 +60,11 @@ void Graph :: printAllPathsUtil (int s, int d, bool visited[], int path[], int& 
         cout << endl;
     }
     else {
-        for (auto itr = adj[s].begin(); itr != adj[s].end(); itr++) 
+        for (auto itr = adj[s].begin(); itr != adj[s].end(); itr++)
             if (!visited[*itr])
                 printAllPathsUtil(*itr, d, visited, path, path_index);
     }
-    
+
     path_index--;
     visited[s] = false;
 }
@@ -84,6 +84,6 @@ int main() {
     int v1, v2;
     cin >> v1 >> v2;
     g.printAllPaths(v1, v2);
-    
+
     return 0;
 }

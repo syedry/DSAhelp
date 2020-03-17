@@ -43,36 +43,35 @@ void push (Node** head_ref, int data) {
     }
     else
         ptr1->next = ptr1;
-    
+
     *head_ref = ptr1;
 }
 
 // Main Logic of code
-int countNodes(struct Node* head) { 
-    struct Node* temp = head; 
-    int result = 0; 
-    if (head != NULL) { 
-        do { 
-            temp = temp->next; 
-            result++; 
-        } while (temp != head); 
-    } 
+int countNodes(struct Node* head) {
+    struct Node* temp = head;
+    int result = 0;
+    if (head != NULL) {
+        do {
+            temp = temp->next;
+            result++;
+        } while (temp != head);
+    }
 
-    return result; 
-} 
+    return result;
+}
 
 /* ----------------- MAIN DRIVER CODE ---------------- */
-int main() 
-{
-    Node* head = NULL; 
-    push(&head, 12); 
-    push(&head, 56); 
-    push(&head, 2); 
-    push(&head, 11); 
-    
+int main() {
+    Node* head = NULL;
+    push(&head, 12);
+    push(&head, 56);
+    push(&head, 2);
+    push(&head, 11);
+
     printList(head);
     printf("%d", countNodes(head));
     cout << endl;
-  
-    return 0; 
-} 
+
+    return 0;
+}

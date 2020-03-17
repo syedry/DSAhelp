@@ -1,5 +1,5 @@
 /*  PROBLEM:
-    Given a sorted doubly linked list containing n nodes. 
+    Given a sorted doubly linked list containing n nodes.
     The problem is to remove duplicate nodes from the given list.
 
     ALGORITHM:
@@ -29,10 +29,10 @@ struct Node {
 };
 
 // Auxiliary Function to Traverse list
-void printList(Node* node)  {  
-    while (node != NULL) {  
-        cout << node->data << " ";  
-        node = node->next;  
+void printList(Node* node)  {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
     }
     cout << endl;
 }
@@ -53,66 +53,65 @@ void deleteNode (Node** head_ref, Node* P) {
 
     if (*head_ref == P)
         *head_ref = P->next;
-    
+
     if (P->next != NULL)
         P->next->prev = P->prev;
 
     if (P->prev != NULL)
         P->prev->next = P->next;
-    
+
     delete P;
 }
 
 // Main Logic of Code
-void removeDuplicates(Node** head_ref) { 
-    if ((*head_ref) == NULL)    return; 
-  
-    struct Node* current = *head_ref; 
-    struct Node* next; 
+void removeDuplicates(Node** head_ref) {
+    if ((*head_ref) == NULL)    return;
 
-    while (current->next != NULL) { 
+    struct Node* current = *head_ref;
+    struct Node* next;
+
+    while (current->next != NULL) {
         // Compare current node's data with next node's data
-        if (current->data == current->next->data) 
+        if (current->data == current->next->data)
             // delete the node pointed to by 'current->next'
-            deleteNode(head_ref, current->next); 
+            deleteNode(head_ref, current->next);
         // else simply move to the next node
         else
-            current = current->next; 
-    } 
-} 
+            current = current->next;
+    }
+}
 
 /* ---------------- MAIN DRIVER CODE ----------------- */
-int main() 
-{ 
-    struct Node* head = NULL; 
+int main() {
+    struct Node* head = NULL;
 
-    push(&head, 12); 
-    push(&head, 10); 
-    push(&head, 8); 
-    push(&head, 8); 
-    push(&head, 6); 
-    push(&head, 4); 
-    push(&head, 4); 
-    push(&head, 4); 
-    push(&head, 4); 
-  
-    cout << "Original DLL:\n"; 
-    printList(head); 
+    push(&head, 12);
+    push(&head, 10);
+    push(&head, 8);
+    push(&head, 8);
+    push(&head, 6);
+    push(&head, 4);
+    push(&head, 4);
+    push(&head, 4);
+    push(&head, 4);
 
-    removeDuplicates(&head); 
-  
-    cout << "DLL after removing duplicates:\n"; 
-    printList(head); 
-  
-    return 0; 
+    cout << "Original DLL:\n";
+    printList(head);
+
+    removeDuplicates(&head);
+
+    cout << "DLL after removing duplicates:\n";
+    printList(head);
+
+    return 0;
 }
 
 /* ADDITIONAL POINT:
     What if the given DLL is not sorted?
-    -> Option 1: We can sort it first and then 
+    -> Option 1: We can sort it first and then
        find for it's duplicates as above.
        Time Complexity: O(n*logn) and Space Complexity: O(1)
 
-    -> Option 2: We can use Hash table. 
+    -> Option 2: We can use Hash table.
        Time Complexity: O(n) and Space Complexity: O(n)
 */

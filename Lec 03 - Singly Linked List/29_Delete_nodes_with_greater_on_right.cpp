@@ -1,12 +1,12 @@
 /*  PROBLEM:
-    Given a singly linked list, remove all the nodes 
+    Given a singly linked list, remove all the nodes
     which have a greater value on right side.
 
     Examples:
-    a) The list 12->15->10->11->5->6->2->3->NULL should be changed 
-       to 15->11->6->3->NULL. Note that 12, 10, 5 and 2 have been 
+    a) The list 12->15->10->11->5->6->2->3->NULL should be changed
+       to 15->11->6->3->NULL. Note that 12, 10, 5 and 2 have been
        deleted because there is a greater value on the right side.
-    
+
     b) The list 10->20->30->40->50->60->NULL should be changed to 60->NULL.
 
     c) The list 60->50->40->30->20->10->NULL should not be changed.
@@ -39,10 +39,10 @@ void push (Node** head_ref, int new_data) {
     *head_ref = new_node;
 }
 
-void printList(Node* node) { 
-    while (node != NULL) { 
-        cout << node->data << " "; 
-        node = node->next; 
+void printList(Node* node) {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
     }
     cout << endl;
 }
@@ -69,10 +69,10 @@ void push (Node** head_ref, int new_data) {
     *head_ref = new_node;
 }
 
-void printList(Node* node) { 
-    while (node != NULL) { 
-        cout << node->data << " "; 
-        node = node->next; 
+void printList(Node* node) {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
     }
     cout << endl;
 }
@@ -94,7 +94,7 @@ void reverseList (Node** head_ref) {
 // Main Logic of Code
 void deleteLesserNodes (Node** head_ref) {
     reverseList(head_ref);
-    
+
     Node* current = *head_ref;
     Node* maxNode = current;
     Node* temp;
@@ -115,27 +115,26 @@ void deleteLesserNodes (Node** head_ref) {
 }
 
 /* ------------------- MAIN DRIVER CODE ----------------- */
-int main() 
-{ 
-    Node* head = NULL; 
+int main() {
+    Node* head = NULL;
 
     // 12->15->10->11->5->6->2->3
-    push(&head, 3); 
-    push(&head, 2); 
-    push(&head, 6); 
-    push(&head, 5); 
-    push(&head, 11); 
-    push(&head, 10); 
-    push(&head, 15); 
-    push(&head, 12); 
-  
-    printf("Given Linked List: \n"); 
-    printList(head); 
-  
-    deleteLesserNodes(&head); 
-  
-    printf("Modified Linked List: \n"); 
-    printList(head); 
-  
-    return 0; 
+    push(&head, 3);
+    push(&head, 2);
+    push(&head, 6);
+    push(&head, 5);
+    push(&head, 11);
+    push(&head, 10);
+    push(&head, 15);
+    push(&head, 12);
+
+    printf("Given Linked List: \n");
+    printList(head);
+
+    deleteLesserNodes(&head);
+
+    printf("Modified Linked List: \n");
+    printList(head);
+
+    return 0;
 }

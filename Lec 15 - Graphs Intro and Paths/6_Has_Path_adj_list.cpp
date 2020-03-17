@@ -1,5 +1,5 @@
-/*  PROBLEM: 
-    Find if there is a path between two vertices in a 
+/*  PROBLEM:
+    Find if there is a path between two vertices in a
     directed graph.
 */
 
@@ -28,11 +28,11 @@ void Graph :: addEdge(int v, int w) {
 bool Graph :: isReachable (int s, int d) {
     if (s == d)
         return true;
-    
+
     bool *visited = new bool[vertices];
-    for (int i = 0; i < vertices; i++) 
+    for (int i = 0; i < vertices; i++)
         visited[i] = false;
-    
+
     queue<int> q;
     q.push(s);
     visited[s] = true;
@@ -65,12 +65,12 @@ int main() {
 
     int v1, v2;
     cin >> v1 >> v2;
-    
-    if (g.isReachable(v1, v2)) 
+
+    if (g.isReachable(v1, v2))
         cout << "Path exists.\n";
     else
         cout << "Path doesn't exist.\n";
-    
-	return 0; 
+
+    return 0;
 }
 
