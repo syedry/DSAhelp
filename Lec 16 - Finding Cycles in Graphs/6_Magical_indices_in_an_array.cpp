@@ -65,7 +65,7 @@ using namespace std;
 #define mod 1000000007
 
 // Function to count number of magical indices.
-int solve(int A[], int n) {
+int magical(int A[], int n) {
     int i, count = 0, j;
 
     // Array to store parent node of traversal.
@@ -105,6 +105,6 @@ int solve(int A[], int n) {
 int main() {
     int A[] = { 0, 0, 0, 2 };
     int n = sizeof(A) / sizeof(A[0]);
-    cout << solve(A, n);
+    cout << magical(A, n);
     return 0;
 }

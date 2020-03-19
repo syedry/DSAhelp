@@ -44,7 +44,7 @@ public:
 
 // Main Logic
 void Graph::dijkstra(int src) {
-    // Create a set to store the vertices that are yet to be processed.
+    // Create a set to store the vertices that are being processed.
     set<pair<int, int>> vertices;
 
     // Create a vector for distances and initialize them with INFINITY
