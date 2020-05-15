@@ -64,7 +64,7 @@ void sortArrayUsingStacks(int arr[], int n) {
        input.push(arr[i]);
     // Sort the temporary stack
     stack<int> tmpStack = sortStack(input);
-    // Put stack elements in arrp[]
+    // Put stack elements in arr[]
     for (int i=0; i<n; i++) {
         arr[i] = tmpStack.top();
         tmpStack.pop();

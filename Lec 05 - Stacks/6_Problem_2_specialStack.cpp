@@ -18,7 +18,7 @@
     Push(int x)
     1) Push x to the first stack (the stack with actual elements)
     2) Compare x with the top element of the second stack (the auxiliary stack).
-       Let the top element be y.
+        Let the top element be y.
         a) If x is smaller than y then push x to the auxiliary stack.
         b) If x is greater than y then push y to the auxiliary stack.
 

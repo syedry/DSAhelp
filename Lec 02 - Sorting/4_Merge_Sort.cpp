@@ -42,6 +42,7 @@ void merge (int arr[], int low, int mid, int high) {
     //Copying remaining elements of left[] if any
     while (i < n1)
         arr[k++] = left[i++];
+    //Copying remaining elements of right[] if any
     while (j < n2)
         arr[k++] = right[j++];
 }
@@ -132,7 +133,7 @@ with two arguments only - Here is how we do that:
         mergeSort(R, size-mid);
         merge(input, L, mid, R, size-mid);
 
-        delete left;
-        delete right;
+        delete L;
+        delete R;
     }
 */

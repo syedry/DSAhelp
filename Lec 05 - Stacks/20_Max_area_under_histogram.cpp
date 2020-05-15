@@ -2,7 +2,7 @@
     Find the largest rectangular area possible in a given histogram where
     the largest rectangle can be made of a number of contiguous bars.
 
-   SOLUTION:
+    SOLUTION:
     1. Create an empty stack.
     2. Start from first bar, and do following for every bar
         ‘hist[i]’ where ‘i’ varies from 0 to n-1.

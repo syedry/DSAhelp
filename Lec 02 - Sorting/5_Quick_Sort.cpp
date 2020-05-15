@@ -57,7 +57,7 @@ void printArray(int arr[], int n) {
 }
 
 // Following partition() function takes last element as pivot,
-// and places all the element at their correct position.
+// and places the pivot element at its correct position.
 int partition (int arr[], int low, int high) {
     int pivot = arr[high];
     int i = (low - 1);

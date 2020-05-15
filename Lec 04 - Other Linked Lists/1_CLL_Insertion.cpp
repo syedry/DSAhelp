@@ -1,4 +1,4 @@
-/*  In a circular linked list, a node can be added in three ways:
+/*  In a circular linked list, a node can be added in four ways:
     a) Insertion in empty list
     b) Insertion at the beginning of the list
     c) Insertion at the end of the list

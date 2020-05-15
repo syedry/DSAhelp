@@ -2,7 +2,7 @@
     1. push(x):
         a) Enqueue x to q2
         b) One by one dequeue everything from q1 and enqueue
-           to q2
+            to q2
         c) Swap the names q1 and q2
     2. pop():
         a) Dequeue an item from q1 and return it

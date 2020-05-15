@@ -12,12 +12,12 @@
         a) Mark the current element as next.
         b) If stack is not empty, compare top element of stack with next.
         c) If next is greater than the top element, pop element from stack.
-           'next' is the next greater element for the popped element.
+            'next' is the next greater element for the popped element.
         d) Keep popping from the stack while the popped element is smaller than 'next'.
-           'next' becomes the next greater element for all such popped elements
+            'next' becomes the next greater element for all such popped elements
     3. Finally, push the next in the stack.
     4. After the loop in step 2 is over, pop all the elements from stack and print -1
-       as next element for them.
+        as next element for them.
 */
 
 #include <bits/stdc++.h>

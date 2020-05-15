@@ -4,14 +4,14 @@
 
     ALGORITHM:
     removeDuplicates(head_ref, x):
-      if head_ref == NULL
-          return
-      Initialize current = head_ref
-      while current->next != NULL
-           if current->data == current->next->data
-               deleteNode(head_ref, current->next)
-           else
-               current = current->next
+        if head_ref == NULL
+            return
+        Initialize current = head_ref
+        while current->next != NULL
+            if current->data == current->next->data
+                deleteNode(head_ref, current->next)
+            else
+                current = current->next
 */
 
 #include<bits/stdc++.h>

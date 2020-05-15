@@ -2,7 +2,7 @@
 
     Let the node to be deleted be 'P'.
     1. If node to be deleted is head node, then change
-       the head pointer to next current head.
+        the head pointer to next current head.
     2. Set next of previous to 'P', if previous to 'P' exists.
     3. Set prev of next to 'P', if next to 'P' exists.
 */

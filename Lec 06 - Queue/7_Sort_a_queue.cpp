@@ -4,22 +4,22 @@
 
     Following is the idea to sort a queue with constant space:
     - On every pass on the queue, we seek for the next minimum index.
-      To do this we dequeue and enqueue elements until we find the next
-      minimum. In this operation the queue is not changed at all.
-      After we have found the minimum index, we dequeue and enqueue
-      elements from the queue except for the minimum index, after we
-      finish the traversal in the queue we insert the minimum to the
-      rear of the queue. We keep on this until all minimums are pushed
-      all way long to the front and the queue becomes sorted.
+        To do this we dequeue and enqueue elements until we find the next
+        minimum. In this operation the queue is not changed at all.
+        After we have found the minimum index, we dequeue and enqueue
+        elements from the queue except for the minimum index, after we
+        finish the traversal in the queue we insert the minimum to the
+        rear of the queue. We keep on this until all minimums are pushed
+        all way long to the front and the queue becomes sorted.
 
     - On every next seeking for the minimum, we exclude seeking on the
-      minimums that have already sorted.
+        minimums that have already sorted.
 
     - We repeat this method n times.
 
     - At first we seek for the maximum, because on every pass we need find
-      the next minimum, so we need to compare it with the largest element
-      in the queue.
+        the next minimum, so we need to compare it with the largest element
+        in the queue.
 
     Time complexity: O(n^2) and Space complexity: O(1)
 */

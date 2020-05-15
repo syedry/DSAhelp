@@ -2,10 +2,10 @@
     1. While there are input symbols left, read the next symbol from the input.
     2. If the symbol is an operand push it onto the stack.
     3. Else the symbol is an operator. Pop the top 2 values from the stack.
-       Put the operator, within the values as arguments and form a string.
-       Push the resulted string back to stack.
+        Put the operator, within the values as arguments and form a string.
+        Push the resulted string back to stack.
     4. If there is only one value in the stack that value
-       in the stack is the desired infix string.
+        in the stack is the desired infix string.
 */
 
 #include <bits/stdc++.h>

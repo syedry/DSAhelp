@@ -6,11 +6,8 @@ struct Edge {
     // Vertex v (or "to" vertex) of a directed edge u-v. "From"
     // vertex u can be obtained using index in adjacency array.
     int v;
-
     int flow; // flow of data in edge
-
     int C; // capacity
-
     // To store index of reverse edge in adjacency list so that
     // we can quickly find it.
     int rev;

@@ -8,17 +8,17 @@
 
     SOLUTION:
     (NOTE: Before reading the solution below, we request
-     the reader to read the "BIGGEST_NUMBER.cpp" problem
-     given in "05-ALGORITHMS -> LEC 01 - SORTING BASED PROBLEMS")
+        the reader to read the "BIGGEST_NUMBER.cpp" problem
+        given in "05-ALGORITHMS -> LEC 01 - SORTING BASED PROBLEMS")
 
     Approach 1 - Using Queues -> O(n*logn) solution
 
     1. Sort the array in non-decreasing order.
     2. Take three queues. One for storing elements which on
-       dividing by 3 gives remainder as 0. The second queue
-       stores digits which on dividing by 3 gives remainder as 1.
-       The third queue stores digits which on dividing by 3 gives
-       remainder as 2. Call them as queue0, queue1 and queue2.
+        dividing by 3 gives remainder as 0. The second queue
+        stores digits which on dividing by 3 gives remainder as 1.
+        The third queue stores digits which on dividing by 3 gives
+        remainder as 2. Call them as queue0, queue1 and queue2.
     3. Find the sum of all the digits.
     4. Three cases arise:
         4.1 The sum of digits is divisible by 3. Dequeue all the
@@ -33,8 +33,8 @@
             items from queue1. If queue1 contains less than two items,
             the number is not possible.
     5. Finally empty all the queues into an auxiliary array.
-       Sort the auxiliary array in non-increasing order.
-       Output the auxiliary array.
+        Sort the auxiliary array in non-increasing order.
+        Output the auxiliary array.
 
     Below is it's implementation.
 */
