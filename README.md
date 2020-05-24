@@ -33,7 +33,7 @@ introduces the basic concepts and definitions of Trees. Then _BT Traversal and B
 provide a sufficient practice of working with trees. A very important concept is then introduced
 in the section of _Least Common Ancestor_ followed by some _Miscellaneous Problems_. 
 
-We then introduce a two important variants of Binary Trees - _Binary Search Trees (BSTs)_ and _Heaps_. 
+We then introduce two important variants of Binary Trees - _Binary Search Trees (BSTs)_ and _Heaps_. 
 
 A small introduction of _AVL Trees_ is also provided at the end.
 
